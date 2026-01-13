@@ -1,3 +1,2 @@
-# HKJC Scraper
-
-A scraper for HKJC data.
+# hkjc_scraper
+Scrap result from hkjc
