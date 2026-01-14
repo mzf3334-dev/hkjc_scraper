@@ -4,25 +4,26 @@ from bs4 import BeautifulSoup
 import csv
 import re
 import os
-import time
-from datetime import datetime, timedelta
 
 async def get_latest_race_date(page):
-    """從馬會首頁獲取最近一次有賽事的日期"""
+    """從馬會結果頁面獲取最近一次有賽事的日期"""
     url = "https://racing.hkjc.com/zh-hk/local/information/localresults"
-    await page.goto(url, wait_until="domcontentloaded")
-    await page.wait_for_selector("#selectId")
-    
-    # 獲取下拉選單中的第一個日期（通常是最近一次賽事）
-    content = await page.content()
-    soup = BeautifulSoup(content, 'html.parser')
-    select = soup.find('select', id='selectId')
-    if select and select.find('option'):
-        # 格式通常是 DD/MM/YYYY
-        date_text = select.find('option').get_text(strip=True)
-        # 轉換為 YYYY/MM/DD
-        d, m, y = date_text.split('/')
-        return f"{y}/{m}/{d}"
+    for attempt in range(3):
+        try:
+            await page.goto(url, wait_until="domcontentloaded", timeout=90000)
+            await page.wait_for_selector("#selectId", timeout=30000)
+            content = await page.content()
+            soup = BeautifulSoup(content, 'html.parser')
+            select = soup.find('select', id='selectId')
+            if select and select.find('option'):
+                date_text = select.find('option').get_text(strip=True)
+                parts = date_text.split('/')
+                if len(parts) == 3:
+                    d, m, y = parts
+                    return f"{y}/{m}/{d}"
+        except Exception as e:
+            print(f"獲取日期嘗試 {attempt+1} 失敗: {e}")
+            await asyncio.sleep(5)
     return None
 
 async def scrape_hkjc_results(date_str):
@@ -32,12 +33,13 @@ async def scrape_hkjc_results(date_str):
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
         )
         page = await context.new_page()
+        page.set_default_timeout(90000)
         
         base_url = f"https://racing.hkjc.com/zh-hk/local/information/localresults?date={date_str}"
-        print(f"正在訪問日期: {date_str}")
+        print(f"正在訪問賽事日期: {date_str}")
         
         try:
-            await page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
+            await page.goto(base_url, wait_until="domcontentloaded")
             await page.wait_for_selector(".js_racecard", timeout=30000)
             
             content = await page.content()
@@ -45,21 +47,39 @@ async def scrape_hkjc_results(date_str):
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
             
-            if not race_nos: race_nos = ['1']
+            if not race_nos:
+                race_nos = ['1']
             print(f"偵測到場次: {race_nos}")
             
             all_data = []
             for race_no in race_nos:
                 print(f"正在抓取第 {race_no} 場...")
-                selector = f'.js_racecard a[href*="RaceNo={race_no}"]'
-                if race_no != '1':
-                    await page.click(selector)
-                    await page.wait_for_function(f"() => document.body.innerText.includes('第 {race_no} 場')", timeout=15000)
-                    await asyncio.sleep(2)
-
-                race_soup = BeautifulSoup(await page.content(), 'html.parser')
+                race_url = f"https://racing.hkjc.com/zh-hk/local/information/localresults?date={date_str}&RaceNo={race_no}"
                 
-                # 提取邏輯
+                success = False
+                race_soup = None
+                for attempt in range(1, 6):
+                    try:
+                        # 關鍵修正：使用更強健的導航與等待
+                        await page.goto(race_url, wait_until="domcontentloaded", timeout=60000)
+                        await asyncio.sleep(5)
+                        
+                        race_soup = BeautifulSoup(await page.content(), 'html.parser')
+                        # 驗證場次：馬會頁面中場次通常在 class="f_fs14" 的 div 中
+                        race_header = race_soup.find('div', class_='f_fs14')
+                        if race_header and re.search(rf'第\s*{race_no}\s*場', race_header.get_text()):
+                            success = True
+                            break
+                        print(f"第 {race_no} 場內容未就緒，重試中 ({attempt}/5)...")
+                    except Exception as e:
+                        print(f"重試第 {race_no} 場時發生錯誤: {e}")
+
+                if not success:
+                    print(f"警告：無法確認第 {race_no} 場內容，嘗試繼續抓取...")
+                    if not race_soup:
+                        race_soup = BeautifulSoup(await page.content(), 'html.parser')
+
+                # 提取數據
                 distance = ""
                 dist_match = re.search(r'(\d+米)', race_soup.get_text())
                 if dist_match: distance = dist_match.group(1)
@@ -87,7 +107,8 @@ async def scrape_hkjc_results(date_str):
 
                 result_table = race_soup.find('table', class_=re.compile(r'draggable'))
                 if result_table:
-                    for row in result_table.select('tr')[1:]:
+                    rows = result_table.select('tr')[1:]
+                    for row in rows:
                         cols = row.select('td')
                         if len(cols) >= 12:
                             horse_full = cols[2].get_text(strip=True)
@@ -120,20 +141,21 @@ async def main():
         await browser.close()
         
     if not target_date:
-        print("無法獲取最新賽事日期")
+        print("無法獲取賽事日期")
         return
 
     results = await scrape_hkjc_results(target_date)
     if results:
-        # 建立 data 資料夾
         os.makedirs('data', exist_ok=True)
-        filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
+        file_date = target_date.replace('/', '')
+        filename = f"data/hkjc_results_{file_date}.csv"
+        
         keys = results[0].keys()
         with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
             dict_writer = csv.DictWriter(f, fieldnames=keys)
             dict_writer.writeheader()
             dict_writer.writerows(results)
-        print(f"成功儲存至 {filename}")
+        print(f"成功儲存 {len(results)} 筆資料至 {filename}")
 
 if __name__ == "__main__":
     asyncio.run(main())
