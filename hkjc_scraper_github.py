@@ -45,7 +45,10 @@ async def scrape_hkjc_results(date_str):
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
             
-            if not race_nos: race_nos = ['1']
+            # 確保包含第一場，因為第一場通常是當前頁面，連結中可能不包含 RaceNo=1
+            if '1' not in race_nos:
+                race_nos.insert(0, '1')
+            
             print(f"偵測到場次: {race_nos}")
             
             all_data = []
