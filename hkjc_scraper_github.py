@@ -33,11 +33,38 @@ async def scrape_hkjc_results(date_str):
         )
         page = await context.new_page()
         
-        base_url = f"https://racing.hkjc.com/zh-hk/local/information/localresults?date={date_str}"
-        print(f"正在訪問日期: {date_str}")
+        # 轉換日期格式以便在下拉選單中選擇 (YYYY/MM/DD -> DD/MM/YYYY)
+        try:
+            parts = date_str.replace('-', '/').split('/')
+            y, m, d = parts
+            dropdown_date = f"{d}/{m}/{y}"
+            formatted_date_str = f"{y}/{m}/{d}"
+        except Exception:
+            dropdown_date = date_str
+            formatted_date_str = date_str
+
+        # 使用 racedate 而非 date 參數
+        base_url = f"https://racing.hkjc.com/zh-hk/local/information/localresults?racedate={formatted_date_str}"
+        print(f"正在訪問日期: {formatted_date_str}")
         
         try:
             await page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
+            
+            # 確保選擇了正確的日期並點擊搜尋
+            try:
+                await page.wait_for_selector("#selectId", timeout=15000)
+                current_val = await page.eval_on_selector("#selectId", "el => el.value")
+                
+                if current_val != dropdown_date:
+                    print(f"目前頁面日期為 {current_val}，正在切換至 {dropdown_date} 並搜尋...")
+                    await page.select_option("#selectId", value=dropdown_date)
+                    await page.click("#submitBtn")
+                    # 等待導航或載入
+                    await page.wait_for_load_state("domcontentloaded")
+                    await asyncio.sleep(3) # 給予額外的時間讓 AJAX 內容載入
+            except Exception as e:
+                print(f"跳過日期選擇步驟: {e}")
+
             await page.wait_for_selector(".js_racecard", timeout=30000)
             
             content = await page.content()
@@ -45,7 +72,7 @@ async def scrape_hkjc_results(date_str):
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
             
-            # 確保包含第一場，因為第一場通常是當前頁面，連結中可能不包含 RaceNo=1
+            # 確保包含第一場
             if '1' not in race_nos:
                 race_nos.insert(0, '1')
             
@@ -56,9 +83,14 @@ async def scrape_hkjc_results(date_str):
                 print(f"正在抓取第 {race_no} 場...")
                 selector = f'.js_racecard a[href*="RaceNo={race_no}"]'
                 if race_no != '1':
-                    await page.click(selector)
-                    await page.wait_for_function(f"() => document.body.innerText.includes('第 {race_no} 場')", timeout=15000)
-                    await asyncio.sleep(2)
+                    try:
+                        await page.click(selector)
+                        # 等待內容更新
+                        await page.wait_for_function(f"() => document.body.innerText.includes('第 {race_no} 場')", timeout=15000)
+                        await asyncio.sleep(1)
+                    except Exception as e:
+                        print(f"點擊第 {race_no} 場失敗: {e}")
+                        continue
 
                 race_soup = BeautifulSoup(await page.content(), 'html.parser')
                 
@@ -116,27 +148,25 @@ async def scrape_hkjc_results(date_str):
             await browser.close()
 
 async def main():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        target_date = await get_latest_race_date(page)
-        await browser.close()
+    # 測試用戶指定的日期
+    test_dates = ["2026/01/14", "2025/01/01"]
+    
+    for target_date in test_dates:
+        print(f"\n--- 開始處理日期: {target_date} ---")
+        results = await scrape_hkjc_results(target_date)
         
-    if not target_date:
-        print("無法獲取最新賽事日期")
-        return
-
-    results = await scrape_hkjc_results(target_date)
-    if results:
-        # 建立 data 資料夾
-        os.makedirs('data', exist_ok=True)
-        filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
-        keys = results[0].keys()
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
-            dict_writer = csv.DictWriter(f, fieldnames=keys)
-            dict_writer.writeheader()
-            dict_writer.writerows(results)
-        print(f"成功儲存至 {filename}")
+        if results:
+            # 建立 data 資料夾
+            os.makedirs('data', exist_ok=True)
+            filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
+            keys = results[0].keys()
+            with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+                dict_writer = csv.DictWriter(f, fieldnames=keys)
+                dict_writer.writeheader()
+                dict_writer.writerows(results)
+            print(f"成功儲存至 {filename}")
+        else:
+            print(f"日期 {target_date} 無法獲取資料")
 
 if __name__ == "__main__":
     asyncio.run(main())
