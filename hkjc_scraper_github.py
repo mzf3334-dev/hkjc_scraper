@@ -10,19 +10,25 @@ from datetime import datetime, timedelta
 async def get_latest_race_date(page):
     """從馬會首頁獲取最近一次有賽事的日期"""
     url = "https://racing.hkjc.com/zh-hk/local/information/localresults"
-    await page.goto(url, wait_until="domcontentloaded")
-    await page.wait_for_selector("#selectId")
-    
-    # 獲取下拉選單中的第一個日期（通常是最近一次賽事）
-    content = await page.content()
-    soup = BeautifulSoup(content, 'html.parser')
-    select = soup.find('select', id='selectId')
-    if select and select.find('option'):
-        # 格式通常是 DD/MM/YYYY
-        date_text = select.find('option').get_text(strip=True)
-        # 轉換為 YYYY/MM/DD
-        d, m, y = date_text.split('/')
-        return f"{y}/{m}/{d}"
+    try:
+        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_selector("#selectId option", timeout=30000)
+        
+        # 獲取下拉選單中的第一個日期（通常是最近一次賽事）
+        content = await page.content()
+        soup = BeautifulSoup(content, 'html.parser')
+        select = soup.find('select', id='selectId')
+        
+        if select:
+            options = select.find_all('option')
+            for option in options:
+                date_text = option.get_text(strip=True)
+                # 檢查是否符合 DD/MM/YYYY 格式
+                if re.match(r'\d{2}/\d{2}/\d{4}', date_text):
+                    d, m, y = date_text.split('/')
+                    return f"{y}/{m}/{d}"
+    except Exception as e:
+        print(f"獲取最新日期時出錯: {e}")
     return None
 
 async def scrape_hkjc_results(date_str):
@@ -148,25 +154,52 @@ async def scrape_hkjc_results(date_str):
             await browser.close()
 
 async def main():
-    # 測試用戶指定的日期
-    test_dates = ["2026/01/14", "2025/01/01"]
+    # 1. 獲取最新賽事日期
+    latest_date = None
+    print("正在獲取最新賽事日期...")
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+        )
+        page = await context.new_page()
+        try:
+            latest_date = await get_latest_race_date(page)
+        except Exception as e:
+            print(f"獲取最新日期時發生錯誤: {e}")
+        finally:
+            await browser.close()
+
+    if not latest_date:
+        print("未能獲取最新日期，程式終止。")
+        return
+
+    print(f"偵測到最新賽事日期: {latest_date}")
     
-    for target_date in test_dates:
-        print(f"\n--- 開始處理日期: {target_date} ---")
-        results = await scrape_hkjc_results(target_date)
-        
-        if results:
-            # 建立 data 資料夾
-            os.makedirs('data', exist_ok=True)
-            filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
-            keys = results[0].keys()
-            with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
-                dict_writer = csv.DictWriter(f, fieldnames=keys)
-                dict_writer.writeheader()
-                dict_writer.writerows(results)
-            print(f"成功儲存至 {filename}")
-        else:
-            print(f"日期 {target_date} 無法獲取資料")
+    # 2. 處理該日期
+    target_date = latest_date
+    print(f"\n--- 開始處理日期: {target_date} ---")
+    
+    # 建立 data 資料夾
+    os.makedirs('data', exist_ok=True)
+    filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
+    
+    # 如果檔案已存在，則跳過（避免 GitHub Actions 重複執行浪費資源）
+    if os.path.exists(filename):
+        print(f"檔案 {filename} 已存在，跳過抓取。")
+        return
+
+    results = await scrape_hkjc_results(target_date)
+    
+    if results:
+        keys = results[0].keys()
+        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+            dict_writer = csv.DictWriter(f, fieldnames=keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(results)
+        print(f"成功儲存至 {filename}")
+    else:
+        print(f"日期 {target_date} 無法獲取資料")
 
 if __name__ == "__main__":
     asyncio.run(main())
