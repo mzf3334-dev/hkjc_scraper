@@ -11,8 +11,10 @@ async def get_latest_race_date(page):
     """從馬會首頁獲取最近一次有賽事的日期"""
     url = "https://racing.hkjc.com/zh-hk/local/information/localresults"
     try:
-        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_selector("#selectId option", timeout=30000)
+        # 使用 wait_until="load" 確保頁面完全載入
+        await page.goto(url, wait_until="load", timeout=60000)
+        # 使用 state="attached" 因為 option 在下拉選單未展開時可能被視為不可見
+        await page.wait_for_selector("#selectId option", state="attached", timeout=30000)
         
         # 獲取下拉選單中的第一個日期（通常是最近一次賽事）
         content = await page.content()
@@ -54,7 +56,8 @@ async def scrape_hkjc_results(date_str):
         print(f"正在訪問日期: {formatted_date_str}")
         
         try:
-            await page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
+            # 使用 wait_until="load" 確保頁面完全載入
+            await page.goto(base_url, wait_until="load", timeout=60000)
             
             # 確保選擇了正確的日期並點擊搜尋
             try:
