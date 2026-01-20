@@ -5,7 +5,7 @@ import csv
 import re
 import os
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 async def get_latest_race_date(page):
     """從馬會首頁獲取最近一次有賽事的日期"""
@@ -23,12 +23,22 @@ async def get_latest_race_date(page):
         
         if select:
             options = select.find_all('option')
+            
+            # 獲取香港當前日期 (UTC+8)
+            # GitHub Actions 預設是 UTC，所以加 8 小時以符合香港時間
+            now_hk = datetime.now(timezone.utc) + timedelta(hours=8)
+            today_str = now_hk.strftime('%Y/%m/%d')
+            print(f"基準日期 (香港時間): {today_str}")
+
             for option in options:
                 date_text = option.get_text(strip=True)
                 # 檢查是否符合 DD/MM/YYYY 格式
                 if re.match(r'\d{2}/\d{2}/\d{4}', date_text):
                     d, m, y = date_text.split('/')
-                    return f"{y}/{m}/{d}"
+                    date_val = f"{y}/{m}/{d}"
+                    # 只接受今天或之前的日期，避免抓取到尚未有結果的未來賽事
+                    if date_val <= today_str:
+                        return date_val
     except Exception as e:
         print(f"獲取最新日期時出錯: {e}")
     return None
