@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run HKJC Scraper",
+			"type": "shell",
+			"command": "C:/TonyMo/Others/Scraper/.venv/Scripts/python.exe hkjc_scraper_github.py"
+		},
+		{
+			"label": "Run Scraper in venv",
+			"type": "shell",
+			"command": "C:/TonyMo/Others/Scraper/.venv/Scripts/python.exe hkjc_scraper_github.py"
+		}
+	]
+}
