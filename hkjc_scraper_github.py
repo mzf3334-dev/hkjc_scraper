@@ -7,8 +7,8 @@ import os
 import time
 from datetime import datetime, timedelta, timezone
 
-async def get_latest_race_date(page):
-    """從馬會首頁獲取最近一次有賽事的日期"""
+async def get_recent_race_dates(page):
+    """從馬會首頁獲取最近幾次有賽事的日期列表"""
     url = "https://racing.hkjc.com/zh-hk/local/information/localresults"
     try:
         # 使用 wait_until="load" 確保頁面完全載入
@@ -16,32 +16,38 @@ async def get_latest_race_date(page):
         # 使用 state="attached" 因為 option 在下拉選單未展開時可能被視為不可見
         await page.wait_for_selector("#selectId option", state="attached", timeout=30000)
         
-        # 獲取下拉選單中的第一個日期（通常是最近一次賽事）
+        # 獲取下拉選單中的所有日期
         content = await page.content()
         soup = BeautifulSoup(content, 'html.parser')
         select = soup.find('select', id='selectId')
         
+        dates = []
         if select:
             options = select.find_all('option')
             
             # 獲取香港當前日期 (UTC+8)
-            # GitHub Actions 預設是 UTC，所以加 8 小時以符合香港時間
             now_hk = datetime.now(timezone.utc) + timedelta(hours=8)
             today_str = now_hk.strftime('%Y/%m/%d')
             print(f"基準日期 (香港時間): {today_str}")
 
             for option in options:
                 date_text = option.get_text(strip=True)
-                # 檢查是否符合 DD/MM/YYYY 格式
+                # 檢查是否符合 DD/MM/YYYY 格式 (下拉選單不包含場地名稱，稍後在抓取時再判斷)
                 if re.match(r'\d{2}/\d{2}/\d{4}', date_text):
-                    d, m, y = date_text.split('/')
+                    parts = date_text.split('/')
+                    d = parts[0]
+                    m = parts[1]
+                    y = parts[2].split(' ')[0]
                     date_val = f"{y}/{m}/{d}"
-                    # 只接受今天或之前的日期，避免抓取到尚未有結果的未來賽事
+                    # 只接受今天或之前的日期
                     if date_val <= today_str:
-                        return date_val
+                        dates.append(date_val)
+                        if len(dates) >= 10: # 多取一些日期以找到香港賽事
+                            break
+        return dates
     except Exception as e:
-        print(f"獲取最新日期時出錯: {e}")
-    return None
+        print(f"獲取最新日期清單時出錯: {e}")
+    return []
 
 async def scrape_hkjc_results(date_str):
     async with async_playwright() as p:
@@ -65,10 +71,21 @@ async def scrape_hkjc_results(date_str):
         base_url = f"https://racing.hkjc.com/zh-hk/local/information/localresults?racedate={formatted_date_str}"
         print(f"正在訪問日期: {formatted_date_str}")
         
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                # 使用 wait_until="domcontentloaded" 以加快載入
+                await page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
+                break
+            except Exception as e:
+                print(f"訪問頁面失敗 (嘗試 {attempt + 1}/{max_retries}): {e}")
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(3)
+                else:
+                    print(f"無法訪問日期 {formatted_date_str}，跳過。")
+                    return []
+        
         try:
-            # 使用 wait_until="load" 確保頁面完全載入
-            await page.goto(base_url, wait_until="load", timeout=60000)
-            
             # 確保選擇了正確的日期並點擊搜尋
             try:
                 await page.wait_for_selector("#selectId", timeout=15000)
@@ -84,10 +101,21 @@ async def scrape_hkjc_results(date_str):
             except Exception as e:
                 print(f"跳過日期選擇步驟: {e}")
 
-            await page.wait_for_selector(".js_racecard", timeout=30000)
+            # 等待賽事卡片載入
+            try:
+                await page.wait_for_selector(".js_racecard", timeout=30000)
+            except Exception as e:
+                print(f"日期 {formatted_date_str} 等待賽事內容 (.js_racecard) 超時，可能無賽事或格式不同")
+                return []
             
             content = await page.content()
             soup = BeautifulSoup(content, 'html.parser')
+
+            # 檢查是否為香港賽事 (場地是否包含沙田或跑馬地)
+            if not any(v in content for v in ["沙田", "跑馬地"]):
+                print(f"日期 {formatted_date_str} 偵測為非香港賽事，跳過。")
+                return []
+
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
             
@@ -167,9 +195,9 @@ async def scrape_hkjc_results(date_str):
             await browser.close()
 
 async def main():
-    # 1. 獲取最新賽事日期
-    latest_date = None
-    print("正在獲取最新賽事日期...")
+    # 1. 獲取可能賽事日期列表
+    race_dates = []
+    print("正在獲取最新賽事日期清單...")
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(
@@ -177,42 +205,44 @@ async def main():
         )
         page = await context.new_page()
         try:
-            latest_date = await get_latest_race_date(page)
+            race_dates = await get_recent_race_dates(page)
         except Exception as e:
-            print(f"獲取最新日期時發生錯誤: {e}")
+            print(f"獲取日期時發生錯誤: {e}")
         finally:
             await browser.close()
 
-    if not latest_date:
-        print("未能獲取最新日期，程式終止。")
+    if not race_dates:
+        print("未能獲取任何日期，程式終止。")
         return
 
-    print(f"偵測到最新賽事日期: {latest_date}")
+    print(f"偵測到候選日期: {race_dates}")
     
-    # 2. 處理該日期
-    target_date = latest_date
-    print(f"\n--- 開始處理日期: {target_date} ---")
-    
-    # 建立 data 資料夾
-    os.makedirs('data', exist_ok=True)
-    filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
-    
-    # 如果檔案已存在，則跳過（避免 GitHub Actions 重複執行浪費資源）
-    if os.path.exists(filename):
-        print(f"檔案 {filename} 已存在，跳過抓取。")
-        return
+    # 2. 依序處理日期，直到成功抓取到香港賽事結果
+    for target_date in race_dates:
+        print(f"\n--- 嘗試處理日期: {target_date} ---")
+        
+        # 建立 data 資料夾
+        os.makedirs('data', exist_ok=True)
+        filename = f"data/hkjc_results_{target_date.replace('/', '')}.csv"
+        
+        # 如果檔案已存在，且不是今天的日期（今天可能會有更新），則跳過
+        if os.path.exists(filename):
+            print(f"檔案 {filename} 已存在，跳過。")
+            continue
 
-    results = await scrape_hkjc_results(target_date)
-    
-    if results:
-        keys = results[0].keys()
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
-            dict_writer = csv.DictWriter(f, fieldnames=keys)
-            dict_writer.writeheader()
-            dict_writer.writerows(results)
-        print(f"成功儲存至 {filename}")
-    else:
-        print(f"日期 {target_date} 無法獲取資料")
+        results = await scrape_hkjc_results(target_date)
+        
+        if results:
+            keys = results[0].keys()
+            with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+                dict_writer = csv.DictWriter(f, fieldnames=keys)
+                dict_writer.writeheader()
+                dict_writer.writerows(results)
+            print(f"成功儲存至 {filename}")
+            # 成功抓取到一個日期後即可停止（如果只想抓最新的一個）
+            break
+        else:
+            print(f"日期 {target_date} 跳過或無資料")
 
 if __name__ == "__main__":
     asyncio.run(main())
