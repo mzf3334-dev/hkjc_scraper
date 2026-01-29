@@ -116,6 +116,9 @@ async def scrape_hkjc_results(date_str):
                 print(f"日期 {formatted_date_str} 偵測為非香港賽事，跳過。")
                 return []
 
+            # 判斷賽事場地
+            racecourse = "ST" if "沙田" in content else "HV"
+
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
             
@@ -123,21 +126,36 @@ async def scrape_hkjc_results(date_str):
             if '1' not in race_nos:
                 race_nos.insert(0, '1')
             
-            print(f"偵測到場次: {race_nos}")
+            print(f"偵測到場次: {race_nos}，場地: {racecourse}")
             
             all_data = []
             for race_no in race_nos:
                 print(f"正在抓取第 {race_no} 場...")
                 selector = f'.js_racecard a[href*="RaceNo={race_no}"]'
-                # 每場都需要點擊，包括第一場，因為頁面初始可能顯示最後一場
+                # 每場都需要點擊，因為頁面初始可能顯示最後一場
                 try:
-                    await page.click(selector)
-                    # 等待內容更新
-                    await page.wait_for_function(f"() => document.body.innerText.includes('第 {race_no} 場')", timeout=15000)
-                    await asyncio.sleep(1)
+                    # 檢查連結是否存在
+                    link_exists = await page.query_selector(selector)
+                    if link_exists:
+                        await page.click(selector)
+                        # 等待內容更新
+                        await page.wait_for_function(f"() => document.body.innerText.includes('第 {race_no} 場')", timeout=15000)
+                        await asyncio.sleep(1)
+                    else:
+                        # 連結不存在，可能頁面已經顯示該場次，嘗試直接使用 URL 導航
+                        race_url = f"https://racing.hkjc.com/racing/information/Chinese/Racing/LocalResults.aspx?RaceDate={formatted_date_str}&Racecourse={racecourse}&RaceNo={race_no}"
+                        await page.goto(race_url, wait_until="domcontentloaded", timeout=30000)
+                        await asyncio.sleep(2)
                 except Exception as e:
-                    print(f"點擊第 {race_no} 場失敗: {e}")
-                    continue
+                    print(f"點擊第 {race_no} 場失敗: {e}，嘗試直接導航...")
+                    try:
+                        # 嘗試使用 URL 直接導航到該場次
+                        race_url = f"https://racing.hkjc.com/racing/information/Chinese/Racing/LocalResults.aspx?RaceDate={formatted_date_str}&Racecourse={racecourse}&RaceNo={race_no}"
+                        await page.goto(race_url, wait_until="domcontentloaded", timeout=30000)
+                        await asyncio.sleep(2)
+                    except Exception as e2:
+                        print(f"直接導航第 {race_no} 場也失敗: {e2}")
+                        continue
 
                 race_soup = BeautifulSoup(await page.content(), 'html.parser')
                 
