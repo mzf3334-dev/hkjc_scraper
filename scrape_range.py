@@ -17,9 +17,13 @@ async def get_all_race_dates(page):
     if select:
         for option in select.find_all('option'):
             date_text = option.get_text(strip=True)
-            if '/' in date_text:
+            # 獲取所有日期 (下拉選單不包含場地名稱，稍後在抓取時再判斷是否為香港賽事)
+            if re.match(r'\d{2}/\d{2}/\d{4}', date_text):
                 try:
-                    d, m, y = date_text.split('/')
+                    parts = date_text.split('/')
+                    d = parts[0]
+                    m = parts[1]
+                    y = parts[2].split(' ')[0]
                     dates.append(f"{y}/{m}/{d}")
                 except:
                     continue
@@ -70,6 +74,11 @@ async def scrape_hkjc_results(page, date_str):
                 return []
             
             content = await page.content()
+            # 檢查是否為香港賽事 (場地是否包含沙田或跑馬地)
+            if not any(v in content for v in ["沙田", "跑馬地"]):
+                print(f"日期 {formatted_date_str} 偵測為非香港賽事，跳過。")
+                return []
+
             soup = BeautifulSoup(content, 'html.parser')
             race_links = soup.select('.js_racecard a[href*="RaceNo="]')
             race_nos = sorted(list(set([re.search(r'RaceNo=(\d+)', a['href'], re.I).group(1) for a in race_links])), key=int)
@@ -154,7 +163,7 @@ async def scrape_hkjc_results(page, date_str):
 
 async def main():
     start_date = datetime(2025, 1, 1)
-    end_date = datetime(2026, 1, 14)
+    end_date = datetime(2026, 1, 21)
     
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)

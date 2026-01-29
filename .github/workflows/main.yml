@@ -2,9 +2,9 @@ name: HKJC Race Results Scraper
 
 on:
   schedule:
-    # 每天香港時間 23:30 執行 (UTC 15:30)
+    # 每週二及週四香港時間 23:30 執行 (UTC 15:30)
     # 賽事通常在晚上結束，此時數據最完整
-    - cron: '30 15 * * *'
+    - cron: '30 15 * * 2,4'
   workflow_dispatch: # 允許手動觸發
 
 jobs:
