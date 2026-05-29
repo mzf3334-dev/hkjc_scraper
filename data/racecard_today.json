@@ -1,7 +1,7 @@
 {
-  "date": "2026/05/29",
+  "date": "2026/05/30",
   "venue": "ST",
-  "scraped_at": "2026-05-29T08:56:32.148754Z",
+  "scraped_at": "2026-05-29T22:35:43.925815Z",
   "races": [
     {
       "race_no": "1",
@@ -10,6 +10,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
@@ -30,6 +38,14 @@
           "trainer": "",
           "weight": "",
           "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
         }
       ]
     },
@@ -40,6 +56,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
@@ -60,6 +84,14 @@
           "trainer": "",
           "weight": "",
           "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
         }
       ]
     },
@@ -70,6 +102,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
@@ -90,6 +130,14 @@
           "trainer": "",
           "weight": "",
           "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
         }
       ]
     },
@@ -100,6 +148,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
@@ -120,6 +176,14 @@
           "trainer": "",
           "weight": "",
           "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
         }
       ]
     },
@@ -130,6 +194,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
@@ -150,6 +222,14 @@
           "trainer": "",
           "weight": "",
           "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
         }
       ]
     },
@@ -160,6 +240,14 @@
       "entries": [
         {
           "horse_no": "S1 日本:",
+          "horse_name": "",
+          "jockey": "",
+          "trainer": "",
+          "weight": "",
+          "gate": ""
+        },
+        {
+          "horse_no": "S2 法國:",
           "horse_name": "",
           "jockey": "",
           "trainer": "",
