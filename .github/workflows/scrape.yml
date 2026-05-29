@@ -1,0 +1,85 @@
+name: HKJC Scraper
+
+on:
+  schedule:
+    # 06:00 HKT = 22:00 UTC previous day
+    - cron: '0 22 * * *'
+    # 21:30 HKT = 13:30 UTC
+    - cron: '30 13 * * *'
+  workflow_dispatch:  # allow manual trigger from GitHub Actions UI
+
+jobs:
+  # ── Job 1: Morning — scrape today's race card ──────────────────
+  scrape-racecard:
+    name: Scrape Race Card (06:00 HKT)
+    runs-on: ubuntu-latest
+    # Only run on the morning cron (22:00 UTC) or manual dispatch
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 22'))
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright beautifulsoup4
+          playwright install chromium --with-deps
+
+      - name: Run race card scraper
+        run: python scrape_racecard.py
+
+      - name: Commit racecard_today.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/racecard_today.json
+          git diff --staged --quiet || git commit -m "chore: update racecard_today.json [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ── Job 2: Evening — scrape results + rebuild merged CSV ───────
+  scrape-results:
+    name: Scrape Results + Merge CSV (21:30 HKT)
+    runs-on: ubuntu-latest
+    # Only run on the evening cron (13:30 UTC) or manual dispatch
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && contains(github.event.schedule, '30 13'))
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright beautifulsoup4
+          playwright install chromium --with-deps
+
+      - name: Scrape race results
+        run: python hkjc_scraper_github.py
+
+      - name: Rebuild merged all_results.csv
+        run: python merge_csv.py
+
+      - name: Commit data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "chore: add race results + rebuild all_results.csv [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
