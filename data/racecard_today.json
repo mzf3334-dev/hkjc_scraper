@@ -1,6 +1,1244 @@
 {
-  "date": null,
-  "venue": null,
-  "scraped_at": "2026-05-30T13:59:18.741209Z",
-  "races": []
+  "date": "2026/05/31",
+  "venue": "ST",
+  "scraped_at": "2026-05-30T15:23:14.066397Z",
+  "races": [
+    {
+      "race_no": "1",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "鵲橋飛昇",
+          "weight": "133",
+          "jockey": "奧爾民",
+          "gate": "9",
+          "trainer": "賀賢"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "全能勇士",
+          "weight": "126",
+          "jockey": "布浩榮",
+          "gate": "1",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "禪勝閃亮",
+          "weight": "126",
+          "jockey": "周俊樂 (-2)",
+          "gate": "4",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "奧林比安",
+          "weight": "126",
+          "jockey": "潘明輝",
+          "gate": "5",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "金鎗寶駒",
+          "weight": "126",
+          "jockey": "黃智弘 (-3)",
+          "gate": "11",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "銳行星",
+          "weight": "126",
+          "jockey": "莫雷拉",
+          "gate": "13",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "紅悅舍",
+          "weight": "126",
+          "jockey": "布文",
+          "gate": "12",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "銀騎士",
+          "weight": "126",
+          "jockey": "希威森",
+          "gate": "7",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "永福",
+          "weight": "121",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "3",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "極歡欣",
+          "weight": "121",
+          "jockey": "艾兆禮",
+          "gate": "6",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "量子猴王",
+          "weight": "121",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "14",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "共建世界",
+          "weight": "121",
+          "jockey": "潘頓",
+          "gate": "10",
+          "trainer": "桂福特"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "雙劍合璧",
+          "weight": "121",
+          "jockey": "班德禮",
+          "gate": "8",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "精英奪冠",
+          "weight": "121",
+          "jockey": "何澤堯",
+          "gate": "2",
+          "trainer": "大衛希斯"
+        }
+      ]
+    },
+    {
+      "race_no": "2",
+      "distance": "1000米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "路路勁",
+          "weight": "135",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "6",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "巨靈神",
+          "weight": "133",
+          "jockey": "巫顯東 (-2)",
+          "gate": "3",
+          "trainer": "徐雨石"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "一舖掂晒",
+          "weight": "132",
+          "jockey": "田泰安",
+          "gate": "13",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "渾身解數",
+          "weight": "130",
+          "jockey": "奧爾民",
+          "gate": "7",
+          "trainer": "黎昭昇"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "鴻圖新星",
+          "weight": "128",
+          "jockey": "布文",
+          "gate": "12",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "升升雙息",
+          "weight": "127",
+          "jockey": "潘明輝",
+          "gate": "14",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "富寶駒",
+          "weight": "127",
+          "jockey": "艾道拿",
+          "gate": "8",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "嘉應耀昇",
+          "weight": "127",
+          "jockey": "艾兆禮",
+          "gate": "10",
+          "trainer": "賀賢"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "神箭",
+          "weight": "127",
+          "jockey": "希威森",
+          "gate": "5",
+          "trainer": "桂福特"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "步風影",
+          "weight": "127",
+          "jockey": "潘頓",
+          "gate": "9",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "勇騎飛",
+          "weight": "127",
+          "jockey": "楊明綸",
+          "gate": "2",
+          "trainer": "蘇偉賢"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "領航多福",
+          "weight": "124",
+          "jockey": "班德禮",
+          "gate": "4",
+          "trainer": "鄭俊偉"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "福進",
+          "weight": "123",
+          "jockey": "莫雷拉",
+          "gate": "11",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "不勞而獲",
+          "weight": "115",
+          "jockey": "蔡明紹",
+          "gate": "1",
+          "trainer": "葉楚航"
+        }
+      ]
+    },
+    {
+      "race_no": "3",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "禾道豐",
+          "weight": "135",
+          "jockey": "莫雷拉",
+          "gate": "4",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "天福",
+          "weight": "133",
+          "jockey": "布浩榮",
+          "gate": "8",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "百威多贏",
+          "weight": "132",
+          "jockey": "霍宏聲",
+          "gate": "2",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "天天耍樂",
+          "weight": "130",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "1",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "澳華發發",
+          "weight": "127",
+          "jockey": "奧爾民",
+          "gate": "6",
+          "trainer": "賀賢"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "領駿輝煌",
+          "weight": "127",
+          "jockey": "周俊樂 (-2)",
+          "gate": "5",
+          "trainer": "文家良"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "越駿聯歡",
+          "weight": "127",
+          "jockey": "巴度",
+          "gate": "3",
+          "trainer": "黎昭昇"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "閃電奇駿",
+          "weight": "127",
+          "jockey": "巫顯東 (-2)",
+          "gate": "9",
+          "trainer": "徐雨石"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "威威神駒",
+          "weight": "125",
+          "jockey": "田泰安",
+          "gate": "14",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "快樂共濟",
+          "weight": "124",
+          "jockey": "何澤堯",
+          "gate": "11",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "杭至尊",
+          "weight": "124",
+          "jockey": "艾道拿",
+          "gate": "10",
+          "trainer": "葉楚航"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "嘉應光彩",
+          "weight": "119",
+          "jockey": "潘頓",
+          "gate": "12",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "觀萬物",
+          "weight": "119",
+          "jockey": "蔡明紹",
+          "gate": "7",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "閃電星福",
+          "weight": "118",
+          "jockey": "希威森",
+          "gate": "13",
+          "trainer": "沈集成"
+        }
+      ]
+    },
+    {
+      "race_no": "4",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "伶俐驫駒",
+          "weight": "135",
+          "jockey": "田泰安",
+          "gate": "12",
+          "trainer": "桂福特"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "賢知友您",
+          "weight": "133",
+          "jockey": "奧爾民",
+          "gate": "9",
+          "trainer": "蘇偉賢"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "電子好好",
+          "weight": "131",
+          "jockey": "何澤堯",
+          "gate": "4",
+          "trainer": "文家良"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "開心孖寶",
+          "weight": "130",
+          "jockey": "布浩榮",
+          "gate": "2",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "舞林盛宴",
+          "weight": "128",
+          "jockey": "莫雷拉",
+          "gate": "3",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "馬鳳凰",
+          "weight": "127",
+          "jockey": "霍宏聲",
+          "gate": "7",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "鋁神",
+          "weight": "126",
+          "jockey": "潘頓",
+          "gate": "1",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "觀萬象",
+          "weight": "126",
+          "jockey": "周俊樂 (-2)",
+          "gate": "13",
+          "trainer": "葉楚航"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "天外富天",
+          "weight": "124",
+          "jockey": "班德禮",
+          "gate": "10",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "步步合拍",
+          "weight": "122",
+          "jockey": "巴度",
+          "gate": "6",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "喜樂之星",
+          "weight": "120",
+          "jockey": "巫顯東 (-2)",
+          "gate": "14",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "摘星聲升",
+          "weight": "119",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "11",
+          "trainer": "鄭俊偉"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "全神貫注",
+          "weight": "118",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "8",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "活得健康",
+          "weight": "116",
+          "jockey": "楊明綸",
+          "gate": "5",
+          "trainer": "黎昭昇"
+        }
+      ]
+    },
+    {
+      "race_no": "5",
+      "distance": "1400米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "喜蓮勁感",
+          "weight": "135",
+          "jockey": "周俊樂 (-2)",
+          "gate": "6",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "金牌活力",
+          "weight": "129",
+          "jockey": "田泰安",
+          "gate": "1",
+          "trainer": "桂福特"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "耀寶",
+          "weight": "128",
+          "jockey": "潘頓",
+          "gate": "5",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "風將",
+          "weight": "128",
+          "jockey": "布浩榮",
+          "gate": "9",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "綫路英雄",
+          "weight": "127",
+          "jockey": "楊明綸",
+          "gate": "8",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "重情重義",
+          "weight": "127",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "14",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "開心三寶",
+          "weight": "123",
+          "jockey": "霍宏聲",
+          "gate": "11",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "友瑩仁",
+          "weight": "122",
+          "jockey": "艾兆禮",
+          "gate": "3",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "多威心得",
+          "weight": "122",
+          "jockey": "黃智弘 (-3)",
+          "gate": "10",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "紅運光輝",
+          "weight": "122",
+          "jockey": "巴度",
+          "gate": "12",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "金勝名駒",
+          "weight": "122",
+          "jockey": "蔡明紹",
+          "gate": "4",
+          "trainer": "蘇偉賢"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "觀眾之力",
+          "weight": "119",
+          "jockey": "莫雷拉",
+          "gate": "2",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "勁勇皇駒",
+          "weight": "117",
+          "jockey": "何澤堯",
+          "gate": "7",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "心雄雄",
+          "weight": "116",
+          "jockey": "班德禮",
+          "gate": "13",
+          "trainer": "大衛希斯"
+        }
+      ]
+    },
+    {
+      "race_no": "6",
+      "distance": "2000米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "同益善",
+          "weight": "135",
+          "jockey": "周俊樂 (-2)",
+          "gate": "10",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "劍飛聲",
+          "weight": "135",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "12",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "安可",
+          "weight": "132",
+          "jockey": "布文",
+          "gate": "8",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "雙贏",
+          "weight": "130",
+          "jockey": "何澤堯",
+          "gate": "4",
+          "trainer": "文家良"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "風火恆雲",
+          "weight": "130",
+          "jockey": "潘明輝",
+          "gate": "14",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "佰勝金龍",
+          "weight": "129",
+          "jockey": "梁家俊",
+          "gate": "5",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "大輝煌",
+          "weight": "128",
+          "jockey": "布浩榮",
+          "gate": "3",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "唯美主義",
+          "weight": "126",
+          "jockey": "希威森",
+          "gate": "6",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "綫路福將",
+          "weight": "125",
+          "jockey": "奧爾民",
+          "gate": "2",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "蜜蜜送",
+          "weight": "125",
+          "jockey": "霍宏聲",
+          "gate": "1",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "富喜來",
+          "weight": "123",
+          "jockey": "艾兆禮",
+          "gate": "9",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "夢照發",
+          "weight": "123",
+          "jockey": "巴度",
+          "gate": "11",
+          "trainer": "黎昭昇"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "禾道威",
+          "weight": "121",
+          "jockey": "潘頓",
+          "gate": "7",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "家樂寶駒",
+          "weight": "119",
+          "jockey": "田泰安",
+          "gate": "13",
+          "trainer": "游達榮"
+        }
+      ]
+    },
+    {
+      "race_no": "7",
+      "distance": "1600米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "合夥奔馳",
+          "weight": "135",
+          "jockey": "布文",
+          "gate": "5",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "陽光勇士",
+          "weight": "135",
+          "jockey": "布浩榮",
+          "gate": "8",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "禪勝輝煌",
+          "weight": "129",
+          "jockey": "班德禮",
+          "gate": "2",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "美麗同享",
+          "weight": "125",
+          "jockey": "艾道拿",
+          "gate": "9",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "光年魅力",
+          "weight": "124",
+          "jockey": "周俊樂",
+          "gate": "1",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "時時歡聲",
+          "weight": "124",
+          "jockey": "潘頓",
+          "gate": "3",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "首飾天空",
+          "weight": "119",
+          "jockey": "艾兆禮",
+          "gate": "7",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "桃花開",
+          "weight": "119",
+          "jockey": "鍾易禮",
+          "gate": "4",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "錶之宇宙",
+          "weight": "116",
+          "jockey": "田泰安",
+          "gate": "6",
+          "trainer": "文家良"
+        }
+      ]
+    },
+    {
+      "race_no": "8",
+      "distance": "1400米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "綫路萬里",
+          "weight": "133",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "11",
+          "trainer": "蘇偉賢"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "龍傲綾羅",
+          "weight": "133",
+          "jockey": "潘頓",
+          "gate": "5",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "嘉應巨昇",
+          "weight": "133",
+          "jockey": "潘明輝",
+          "gate": "12",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "盈妍威楓",
+          "weight": "133",
+          "jockey": "何澤堯",
+          "gate": "2",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "巴閉仔",
+          "weight": "133",
+          "jockey": "周俊樂 (-2)",
+          "gate": "8",
+          "trainer": "徐雨石"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "創寶駒",
+          "weight": "129",
+          "jockey": "艾道拿",
+          "gate": "1",
+          "trainer": "黎昭昇"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "開心五月",
+          "weight": "127",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "10",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "將傲",
+          "weight": "127",
+          "jockey": "布文",
+          "gate": "14",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "喜悅歡欣",
+          "weight": "127",
+          "jockey": "奧爾民",
+          "gate": "4",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "愛心萬里",
+          "weight": "127",
+          "jockey": "布浩榮",
+          "gate": "6",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "天威",
+          "weight": "127",
+          "jockey": "巫顯東 (-2)",
+          "gate": "9",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "文明福星",
+          "weight": "126",
+          "jockey": "班德禮",
+          "gate": "3",
+          "trainer": "丁冠豪"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "皇者威楓",
+          "weight": "125",
+          "jockey": "田泰安",
+          "gate": "13",
+          "trainer": "葉楚航"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "華麗再贏",
+          "weight": "120",
+          "jockey": "艾兆禮",
+          "gate": "7",
+          "trainer": "沈集成"
+        }
+      ]
+    },
+    {
+      "race_no": "9",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "精算暴雪",
+          "weight": "135",
+          "jockey": "艾道拿",
+          "gate": "7",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "美麗第一",
+          "weight": "129",
+          "jockey": "巴度",
+          "gate": "3",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "好友心得",
+          "weight": "126",
+          "jockey": "班德禮",
+          "gate": "6",
+          "trainer": "大衛希斯"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "幸運有您",
+          "weight": "124",
+          "jockey": "霍宏聲",
+          "gate": "2",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "星際快車",
+          "weight": "124",
+          "jockey": "布文",
+          "gate": "10",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "笑傲江湖",
+          "weight": "121",
+          "jockey": "何澤堯",
+          "gate": "5",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "錶之星河",
+          "weight": "121",
+          "jockey": "田泰安",
+          "gate": "1",
+          "trainer": "文家良"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "翠紅",
+          "weight": "120",
+          "jockey": "艾兆禮",
+          "gate": "9",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "信心星",
+          "weight": "117",
+          "jockey": "莫雷拉",
+          "gate": "8",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "友愛心得",
+          "weight": "115",
+          "jockey": "楊明綸",
+          "gate": "4",
+          "trainer": "大衛希斯"
+        }
+      ]
+    },
+    {
+      "race_no": "10",
+      "distance": "1600米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "遨遊武士",
+          "weight": "135",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "6",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "又龍串鳳",
+          "weight": "135",
+          "jockey": "巴度",
+          "gate": "1",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "安都",
+          "weight": "130",
+          "jockey": "布文",
+          "gate": "10",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "一生好彩",
+          "weight": "130",
+          "jockey": "周俊樂 (-2)",
+          "gate": "13",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "活力拍檔",
+          "weight": "129",
+          "jockey": "何澤堯",
+          "gate": "12",
+          "trainer": "呂健威"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "星幻",
+          "weight": "126",
+          "jockey": "布浩榮",
+          "gate": "11",
+          "trainer": "韋達"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "共享富裕",
+          "weight": "122",
+          "jockey": "莫雷拉",
+          "gate": "2",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "奇異果",
+          "weight": "122",
+          "jockey": "田泰安",
+          "gate": "4",
+          "trainer": "桂福特"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "不同世界",
+          "weight": "121",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "8",
+          "trainer": "葉楚航"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "高山神駒",
+          "weight": "121",
+          "jockey": "希威森",
+          "gate": "5",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "三寶進財",
+          "weight": "119",
+          "jockey": "潘頓",
+          "gate": "9",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "名揚四海",
+          "weight": "117",
+          "jockey": "蔡明紹",
+          "gate": "3",
+          "trainer": "巫偉傑"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "奮鬥心",
+          "weight": "115",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "14",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "都靈冠星",
+          "weight": "115",
+          "jockey": "班德禮",
+          "gate": "7",
+          "trainer": "大衛希斯"
+        }
+      ]
+    },
+    {
+      "race_no": "11",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "跨境寶馬",
+          "weight": "135",
+          "jockey": "奧爾民",
+          "gate": "6",
+          "trainer": "蔡約翰"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "醒目高球",
+          "weight": "131",
+          "jockey": "班德禮",
+          "gate": "11",
+          "trainer": "羅富全"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "定風波",
+          "weight": "125",
+          "jockey": "潘頓",
+          "gate": "7",
+          "trainer": "沈集成"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "嘉應奇兵",
+          "weight": "129",
+          "jockey": "周俊樂 (-2)",
+          "gate": "2",
+          "trainer": "賀賢"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "競駿皇者",
+          "weight": "129",
+          "jockey": "霍宏聲",
+          "gate": "14",
+          "trainer": "游達榮"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "嘉應勇將",
+          "weight": "127",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "12",
+          "trainer": "告東尼"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "騰龍四海",
+          "weight": "126",
+          "jockey": "梁家俊",
+          "gate": "5",
+          "trainer": "黎昭昇"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "勇者為皇",
+          "weight": "123",
+          "jockey": "潘明輝",
+          "gate": "9",
+          "trainer": "伍鵬志"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "正本唐心",
+          "weight": "121",
+          "jockey": "莫雷拉",
+          "gate": "8",
+          "trainer": "方嘉柏"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "高士威勁",
+          "weight": "120",
+          "jockey": "袁幸堯 (-10)",
+          "gate": "4",
+          "trainer": "姚本輝"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "帥帥友福",
+          "weight": "120",
+          "jockey": "楊明綸",
+          "gate": "13",
+          "trainer": "鄭俊偉"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "千杯不醉",
+          "weight": "120",
+          "jockey": "希威森",
+          "gate": "10",
+          "trainer": "廖康銘"
+        },
+        {
+          "horse_no": "13",
+          "horse_name": "智勝策略",
+          "weight": "117",
+          "jockey": "田泰安",
+          "gate": "1",
+          "trainer": "蘇偉賢"
+        },
+        {
+          "horse_no": "14",
+          "horse_name": "摯友勝",
+          "weight": "117",
+          "jockey": "蔡明紹",
+          "gate": "3",
+          "trainer": "丁冠豪"
+        }
+      ]
+    }
+  ]
 }

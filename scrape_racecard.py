@@ -11,6 +11,7 @@ import json
 import os
 import re
 from datetime import date, datetime, timedelta, timezone
+from urllib.parse import unquote
 
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
@@ -73,30 +74,41 @@ def is_valid_entry(entry: dict) -> bool:
     return True
 
 def extract_candidate_dates(content: str) -> list[dict[str, str]]:
-    """Read race-date options from page and normalize candidate list."""
+    """Read race-date candidates from dropdown and race links."""
     soup = BeautifulSoup(content, 'html.parser')
-    select = soup.find('select', id='selectId')
-    if not select:
-        return []
 
     seen: set[tuple[str, str]] = set()
     candidates: list[dict[str, str]] = []
 
-    for option in select.find_all('option'):
-        raw_value = (option.get('value') or '').strip()
-        raw_label = option.get_text(' ', strip=True)
-
-        ymd = parse_date_token(raw_value) or parse_date_token(raw_label)
+    def add_candidate(ymd: str | None, value: str = '', label: str = '') -> None:
         if not ymd:
-            continue
-
-        select_value = raw_value or to_ddmmyyyy(ymd)
+            return
+        select_value = value.strip() if value else to_ddmmyyyy(ymd)
         key = (select_value, ymd)
         if key in seen:
-            continue
+            return
         seen.add(key)
+        candidates.append({'date': ymd, 'value': select_value, 'label': label.strip()})
 
-        candidates.append({'date': ymd, 'value': select_value, 'label': raw_label})
+    select = soup.find('select', id='selectId')
+    if select:
+        for option in select.find_all('option'):
+            raw_value = (option.get('value') or '').strip()
+            raw_label = option.get_text(' ', strip=True)
+
+            ymd = parse_date_token(raw_value) or parse_date_token(raw_label)
+            add_candidate(ymd, value=raw_value, label=raw_label)
+
+    # Fallback/additional source: race links usually contain racedate=YYYY/MM/DD.
+    for a in soup.select('a[href*="racedate=" i], a[href*="RaceDate=" i]'):
+        href = a.get('href', '')
+        m = re.search(r'(?:racedate|RaceDate)=([^&#]+)', href, re.I)
+        if not m:
+            continue
+
+        raw_date = unquote(m.group(1)).strip()
+        ymd = parse_date_token(raw_date)
+        add_candidate(ymd)
 
     return candidates
 
@@ -108,14 +120,24 @@ def order_candidates(candidates: list[dict[str, str]], today_ref: date) -> list[
     past = sorted([c for c in candidates if d_obj(c) < today_ref], key=d_obj, reverse=True)
     return future + past
 
-def extract_race_numbers(soup: BeautifulSoup) -> list[str]:
-    numbers = []
-    for a in soup.select('.js_racecard a[href*="RaceNo="], a[href*="RaceNo="]'):
+def extract_race_numbers(soup: BeautifulSoup, venue: str = '') -> list[str]:
+    """Extract race tab numbers for venue; always includes race 1."""
+    numbers: set[str] = set()
+    for a in soup.select('a[href*="RaceNo="]'):
         href = a.get('href', '')
+        # Only consider SPA race-tab links (relative, start with '?racedate=')
+        if not re.match(r'\?racedate=', href, re.I):
+            continue
+        if venue and f'Racecourse={venue}' not in href:
+            continue
         m = re.search(r'RaceNo=(\d+)', href, re.I)
         if m:
-            numbers.append(m.group(1))
-    return sorted(list(set(numbers)), key=int)
+            numbers.add(m.group(1))
+    result = sorted(numbers, key=int)
+    # Race 1 is the default page view — add it when absent from the tab links
+    if result and '1' not in result:
+        result = ['1'] + result
+    return result
 
 def generate_date_search_order(today_ref: date, days_ahead: int = 7, days_back: int = 3) -> list[str]:
     """Generate candidate race dates, prioritizing upcoming days first."""
@@ -131,10 +153,31 @@ def generate_date_search_order(today_ref: date, days_ahead: int = 7, days_back: 
 
     return candidates
 
+# Maps Chinese header text → internal field name
+_HEADER_FIELD: dict[str, str] = {
+    '馬匹編號': 'horse_no',
+    '馬名':     'horse_name',
+    '騎師':     'jockey',
+    '練馬師':   'trainer',
+    '負磅':     'weight',
+    '檔位':     'gate',
+}
+
+# Confirmed fallback positions (diagnostic 2026-05-30):
+# [0]=馬匹編號 [1]=6次近績 [2]=綵衣(img) [3]=馬名 [4]=烙號
+# [5]=負磅     [6]=騎師   [7]=可能超磅   [8]=檔位 [9]=練馬師
+_FALLBACK_COL_MAP: dict[str, int] = {
+    'horse_no': 0, 'horse_name': 3, 'weight': 5,
+    'jockey':   6, 'gate':       8, 'trainer': 9,
+}
+
+
 def extract_entries(race_soup: BeautifulSoup) -> list[dict]:
     entries: list[dict] = []
 
-    entry_table = race_soup.find('table', class_=re.compile(r'draggable|raceCard', re.I))
+    # Use exact class matching to avoid matching 'js_racecard' via substring.
+    entry_table = (race_soup.find('table', class_='starter') or
+                   race_soup.find('table', class_='draggable'))
     if not entry_table:
         for tbl in race_soup.find_all('table'):
             if tbl.find(string=re.compile(r'騎師|馬名')):
@@ -144,18 +187,30 @@ def extract_entries(race_soup: BeautifulSoup) -> list[dict]:
     if not entry_table:
         return entries
 
-    for row in entry_table.select('tr')[1:]:
-        cols = row.select('td')
-        if len(cols) < 6:
+    rows = entry_table.find_all('tr')
+    if not rows:
+        return entries
+
+    # Build column index map from header row
+    col_map: dict[str, int] = {}
+    for i, cell in enumerate(rows[0].find_all(['th', 'td'])):
+        key = cell.get_text(strip=True)
+        if key in _HEADER_FIELD:
+            col_map[_HEADER_FIELD[key]] = i
+
+    if not col_map:
+        col_map = _FALLBACK_COL_MAP
+
+    min_cols = max(col_map.values()) + 1
+
+    for row in rows[1:]:
+        cols = row.find_all('td')
+        if len(cols) < min_cols:
             continue
 
         candidate = {
-            'horse_no': cols[0].get_text(strip=True),
-            'horse_name': cols[1].get_text(strip=True),
-            'jockey': cols[2].get_text(strip=True),
-            'trainer': cols[3].get_text(strip=True),
-            'weight': cols[4].get_text(strip=True),
-            'gate': cols[5].get_text(strip=True),
+            field: cols[idx].get_text(strip=True)
+            for field, idx in col_map.items()
         }
         if is_valid_entry(candidate):
             entries.append(candidate)
@@ -165,7 +220,7 @@ def extract_entries(race_soup: BeautifulSoup) -> list[dict]:
 async def switch_to_candidate_date(page, candidate: dict[str, str]) -> bool:
     """Switch racecard page to a specific candidate date via dropdown."""
     try:
-        await page.wait_for_selector('#selectId', timeout=15000)
+        await page.wait_for_selector('#selectId', timeout=3000)
     except Exception:
         # If selector is missing, keep current page and try parsing anyway.
         return True
@@ -213,36 +268,24 @@ async def switch_to_candidate_date(page, candidate: dict[str, str]) -> bool:
     return True
 
 async def scrape_races_for_date(page, target_date: str, venue: str, race_nos: list[str]) -> list[dict]:
-    """Scrape all races for one date and venue."""
+    """Scrape all races by navigating to each race URL directly."""
     races = []
-    race_date_dash = target_date.replace('/', '-')
 
     for race_no in race_nos:
         print(f'  Scraping race {race_no} ...')
-        race_url = (
-            f'https://racing.hkjc.com/racing/information/Chinese/Racing/RaceCard.aspx'
-            f'?RaceDate={race_date_dash}&Racecourse={venue}&RaceNo={race_no}'
-        )
-
-        navigated = False
-        selector = f'.js_racecard a[href*="RaceNo={race_no}"]'
+        race_url = (f'{CARD_URL}?racedate={target_date}'
+                    f'&Racecourse={venue}&RaceNo={race_no}')
         try:
-            link = await page.query_selector(selector)
-            if link:
-                await link.click()
-                await page.wait_for_load_state('domcontentloaded')
-                await asyncio.sleep(1)
-                navigated = True
-        except Exception:
-            pass
+            await page.goto(race_url, wait_until='domcontentloaded', timeout=35000)
+        except Exception as e:
+            print(f'  Race {race_no}: page load failed: {e}')
+            continue
 
-        if not navigated:
-            try:
-                await page.goto(race_url, wait_until='domcontentloaded', timeout=30000)
-                await asyncio.sleep(1)
-            except Exception as e:
-                print(f'  Could not navigate to race {race_no}: {e}')
-                continue
+        # Wait for entry table to render (SPA renders asynchronously)
+        try:
+            await page.wait_for_selector('table.starter', timeout=15000)
+        except Exception:
+            await asyncio.sleep(5)
 
         race_soup = BeautifulSoup(await page.content(), 'html.parser')
         text = race_soup.get_text()
@@ -274,32 +317,44 @@ async def scrape_races_for_date(page, target_date: str, venue: str, race_nos: li
     return races
 
 async def scrape_races_from_direct_seed(page, target_date: str, venue: str) -> list[dict]:
-    """Try direct racecard URL for specific date/venue and scrape all races."""
-    race_date_dash = target_date.replace('/', '-')
-    seed_url = (
-        f'https://racing.hkjc.com/racing/information/Chinese/Racing/RaceCard.aspx'
-        f'?RaceDate={race_date_dash}&Racecourse={venue}&RaceNo=1'
-    )
+    """Try SPA racecard URL for specific date/venue and scrape all races."""
+    seed_url = f'{CARD_URL}?racedate={target_date}&Racecourse={venue}&RaceNo=1'
 
     try:
         await page.goto(seed_url, wait_until='domcontentloaded', timeout=35000)
-        await asyncio.sleep(1)
     except Exception as e:
         print(f'  {target_date} {venue}: direct seed load failed: {e}')
         return []
+
+    # Wait for entry table to render (SPA renders asynchronously)
+    try:
+        await page.wait_for_selector('table.starter', timeout=15000)
+    except Exception:
+        await asyncio.sleep(5)
 
     content = await page.content()
     if not is_local_hk_page(content):
         return []
 
     soup = BeautifulSoup(content, 'html.parser')
-    race_nos = extract_race_numbers(soup)
+    # Read actual date shown by SPA (may differ from target_date if params ignored)
+    actual_date = target_date
+    for a in soup.select(f'a[href*="Racecourse={venue}"][href*="RaceNo="]'):
+        href = a.get('href', '')
+        if not re.match(r'\?racedate=', href, re.I):
+            continue
+        m = re.search(r'racedate=([^&]+)', href, re.I)
+        if m:
+            actual_date = parse_date_token(unquote(m.group(1))) or target_date
+            break
+
+    race_nos = extract_race_numbers(soup, venue)
     if not race_nos:
         print(f'  {target_date} {venue}: no race tabs found on page.')
         return []
 
-    print(f'  {target_date} {venue}: candidate races {race_nos}')
-    return await scrape_races_for_date(page, target_date, venue, race_nos)
+    print(f'  {target_date} {venue}: candidate races {race_nos} (actual date {actual_date})')
+    return await scrape_races_for_date(page, actual_date, venue, race_nos)
 
 def write_empty(reason: str = ''):
     payload = {'date': None, 'venue': None, 'scraped_at': datetime.utcnow().isoformat() + 'Z', 'races': []}
@@ -320,12 +375,19 @@ async def scrape():
         )
         page = await context.new_page()
 
-        try:
-            await page.goto(CARD_URL, wait_until='domcontentloaded', timeout=60000)
-        except Exception as e:
-            print(f'Failed to load race card page: {e}')
+        loaded = False
+        for attempt in range(1, 4):
+            try:
+                await page.goto(CARD_URL, wait_until='domcontentloaded', timeout=60000)
+                loaded = True
+                break
+            except Exception as e:
+                print(f'Initial page load attempt {attempt} failed: {e}')
+                if attempt < 3:
+                    await asyncio.sleep(5)
+        if not loaded:
             await browser.close()
-            write_empty('page load failed')
+            write_empty('page load failed after 3 attempts')
             return
 
         # Wait for race selector or an error/no-race notice.
@@ -368,7 +430,7 @@ async def scrape():
             tried_pairs.add((target_date, venue))
 
             soup = BeautifulSoup(content, 'html.parser')
-            race_nos = extract_race_numbers(soup)
+            race_nos = extract_race_numbers(soup, venue)
             if not race_nos:
                 print(f'  {target_date}: no race links found, skip.')
                 continue
