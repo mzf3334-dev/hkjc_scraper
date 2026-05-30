@@ -13,6 +13,8 @@ jobs:
   scrape-racecard:
     name: Scrape Race Card (06:00 HKT)
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     # Only run on the morning cron (22:00 UTC) or manual dispatch
     if: >
       github.event_name == 'workflow_dispatch' ||
@@ -49,6 +51,8 @@ jobs:
   scrape-results:
     name: Scrape Results + Merge CSV (21:30 HKT)
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     # Only run on the evening cron (13:30 UTC) or manual dispatch
     if: >
       github.event_name == 'workflow_dispatch' ||
