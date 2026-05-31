@@ -18,7 +18,8 @@ from bs4 import BeautifulSoup
 
 DATA_DIR  = os.path.join(os.path.dirname(__file__), 'data')
 OUT_FILE  = os.path.join(DATA_DIR, 'racecard_today.json')
-CARD_URL  = 'https://racing.hkjc.com/zh-hk/local/information/racecard'
+CARD_URL    = 'https://racing.hkjc.com/zh-hk/local/information/racecard'
+CARD_URL_EN = 'https://racing.hkjc.com/en/local/information/racecard'
 
 def hkt_today() -> str:
     """Return today's date string in YYYY/MM/DD (HKT = UTC+8)."""
@@ -320,6 +321,34 @@ async def scrape_races_for_date(page, target_date: str, venue: str, race_nos: li
                     going = nxt.get_text(strip=True)
 
         entries = extract_entries(race_soup)
+
+        # If any entries are missing silk_url, supplement from English racecard
+        # (English horse names carry the owner's color code, e.g. "HORSE NAME (B350)")
+        if entries and any(not e.get('silk_url') for e in entries):
+            en_url = (f'{CARD_URL_EN}?racedate={target_date}'
+                      f'&Racecourse={venue}&RaceNo={race_no}')
+            try:
+                await page.goto(en_url, wait_until='domcontentloaded', timeout=30000)
+                await page.wait_for_selector('table.starter', timeout=12000)
+                en_soup = BeautifulSoup(await page.content(), 'html.parser')
+                en_entries = extract_entries(en_soup)
+                en_silk: dict[str, str] = {}
+                for en_e in en_entries:
+                    hno = en_e.get('horse_no', '')
+                    silk = en_e.get('silk_url', '')
+                    if not silk:
+                        m = re.search(r'\(([^)]+)\)\s*$', en_e.get('horse_name', ''))
+                        if m:
+                            silk = ('https://racing.hkjc.com/racing/content/'
+                                    f'Images/RaceColor/{m.group(1)}.gif')
+                    if hno and silk:
+                        en_silk[hno] = silk
+                for e in entries:
+                    if not e.get('silk_url') and e.get('horse_no') in en_silk:
+                        e['silk_url'] = en_silk[e['horse_no']]
+            except Exception as ex:
+                print(f'  Race {race_no}: English silk lookup failed: {ex}')
+
         if entries:
             races.append({
                 'race_no': race_no,
