@@ -47,6 +47,13 @@ def parse_date_token(text: str) -> str | None:
 
     return None
 
+def parse_race_no_token(text: str) -> str | None:
+    """Extract race number from query text such as '?...&RaceNo=6'."""
+    if not text:
+        return None
+    m = re.search(r'(?:^|[?&])RaceNo=(\d+)', text, re.I)
+    return m.group(1) if m else None
+
 def to_ddmmyyyy(ymd: str) -> str:
     y, m, d = ymd.split('/')
     return f'{d}/{m}/{y}'
@@ -121,8 +128,12 @@ def order_candidates(candidates: list[dict[str, str]], today_ref: date) -> list[
     past = sorted([c for c in candidates if d_obj(c) < today_ref], key=d_obj, reverse=True)
     return future + past
 
-def extract_race_numbers(soup: BeautifulSoup, venue: str = '') -> list[str]:
-    """Extract race tab numbers for venue; always includes race 1."""
+def extract_race_numbers(
+    soup: BeautifulSoup,
+    venue: str = '',
+    active_race_no: str | None = None,
+) -> list[str]:
+    """Extract race tab numbers for venue, including current active race number."""
     numbers: set[str] = set()
     for a in soup.select('a[href*="RaceNo="]'):
         href = a.get('href', '')
@@ -134,6 +145,23 @@ def extract_race_numbers(soup: BeautifulSoup, venue: str = '') -> list[str]:
         m = re.search(r'RaceNo=(\d+)', href, re.I)
         if m:
             numbers.add(m.group(1))
+
+    # Active race tab can be a plain image (no <a href>) such as
+    # racecard_rt_7_o.gif. Parse race-tab images from the venue row.
+    for row in soup.find_all('tr'):
+        row_html = str(row)
+        if venue and f'Racecourse={venue}' not in row_html:
+            continue
+        for img in row.select('img[src*="racecard_rt_"]'):
+            src = img.get('src', '')
+            m = re.search(r'racecard_rt_(\d+)(?:_o)?\.gif', src, re.I)
+            if m:
+                numbers.add(m.group(1))
+
+    # Active tab is sometimes not rendered as an <a> element; add it from URL.
+    if active_race_no and re.fullmatch(r'\d+', active_race_no):
+        numbers.add(active_race_no)
+
     result = sorted(numbers, key=int)
     # Race 1 is the default page view — add it when absent from the tab links
     if result and '1' not in result:
@@ -394,7 +422,8 @@ async def scrape_races_from_direct_seed(page, target_date: str, venue: str) -> l
             actual_date = parse_date_token(unquote(m.group(1))) or target_date
             break
 
-    race_nos = extract_race_numbers(soup, venue)
+    active_race_no = parse_race_no_token(page.url)
+    race_nos = extract_race_numbers(soup, venue, active_race_no=active_race_no)
     if not race_nos:
         print(f'  {target_date} {venue}: no race tabs found on page.')
         return []
@@ -476,7 +505,8 @@ async def scrape():
             tried_pairs.add((target_date, venue))
 
             soup = BeautifulSoup(content, 'html.parser')
-            race_nos = extract_race_numbers(soup, venue)
+            active_race_no = parse_race_no_token(page.url)
+            race_nos = extract_race_numbers(soup, venue, active_race_no=active_race_no)
             if not race_nos:
                 print(f'  {target_date}: no race links found, skip.')
                 continue
