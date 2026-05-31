@@ -201,6 +201,13 @@ def extract_entries(race_soup: BeautifulSoup) -> list[dict]:
     if not col_map:
         col_map = _FALLBACK_COL_MAP
 
+    # Detect silk (綵衣) image column index
+    silk_col_idx = 2  # confirmed fallback position
+    for i, cell in enumerate(rows[0].find_all(['th', 'td'])):
+        if '綵衣' in cell.get_text(strip=True):
+            silk_col_idx = i
+            break
+
     min_cols = max(col_map.values()) + 1
 
     for row in rows[1:]:
@@ -212,6 +219,16 @@ def extract_entries(race_soup: BeautifulSoup) -> list[dict]:
             field: cols[idx].get_text(strip=True)
             for field, idx in col_map.items()
         }
+        # Extract jockey silk image URL from the 綵衣 column
+        if len(cols) > silk_col_idx:
+            img_tag = cols[silk_col_idx].find('img')
+            if img_tag:
+                src = (img_tag.get('src') or img_tag.get('data-original') or
+                       img_tag.get('data-src') or '')
+                if src.startswith('/'):
+                    src = 'https://racing.hkjc.com' + src
+                if src:
+                    candidate['silk_url'] = src
         if is_valid_entry(candidate):
             entries.append(candidate)
 
