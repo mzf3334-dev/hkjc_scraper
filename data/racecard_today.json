@@ -1,7 +1,7 @@
 {
   "date": "2026/06/07",
   "venue": "ST",
-  "scraped_at": "2026-06-05T22:35:50.459282Z",
+  "scraped_at": "2026-06-06T22:28:14.247767Z",
   "races": [
     {
       "race_no": "1",
@@ -30,7 +30,7 @@
           "horse_no": "3",
           "horse_name": "光輝歲月",
           "weight": "129",
-          "jockey": "霍宏聲",
+          "jockey": "莫雷拉",
           "gate": "6",
           "trainer": "游達榮",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J508.gif"
@@ -305,7 +305,7 @@
           "horse_no": "6",
           "horse_name": "綠色鐵驥",
           "weight": "127",
-          "jockey": "霍宏聲",
+          "jockey": "艾兆禮",
           "gate": "8",
           "trainer": "伍鵬志",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L255.gif"
@@ -418,18 +418,18 @@
         },
         {
           "horse_no": "6",
-          "horse_name": "時尚歡欣",
-          "weight": "127",
-          "jockey": "周俊樂 (-2)",
+          "horse_name": "八仟好運",
+          "weight": "131",
+          "jockey": "艾兆禮",
           "gate": "6",
-          "trainer": "鄭俊偉",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H041.gif"
+          "trainer": "蔡約翰",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K582.gif"
         },
         {
           "horse_no": "7",
           "horse_name": "北極之錶",
           "weight": "127",
-          "jockey": "霍宏聲",
+          "jockey": "潘頓",
           "gate": "11",
           "trainer": "廖康銘",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L211.gif"
@@ -580,7 +580,7 @@
           "horse_no": "9",
           "horse_name": "精明選擇",
           "weight": "128",
-          "jockey": "霍宏聲",
+          "jockey": "艾兆禮",
           "gate": "4",
           "trainer": "伍鵬志",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J146.gif"
@@ -792,7 +792,7 @@
           "horse_no": "3",
           "horse_name": "星光大道",
           "weight": "130",
-          "jockey": "霍宏聲",
+          "jockey": "布文",
           "gate": "11",
           "trainer": "韋達",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L194.gif"
@@ -1058,7 +1058,7 @@
           "horse_no": "5",
           "horse_name": "超寫意",
           "weight": "127",
-          "jockey": "霍宏聲",
+          "jockey": "莫雷拉",
           "gate": "2",
           "trainer": "姚本輝",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K469.gif"
@@ -1261,7 +1261,7 @@
           "horse_no": "2",
           "horse_name": "魅力奔騰",
           "weight": "134",
-          "jockey": "霍宏聲",
+          "jockey": "莫雷拉",
           "gate": "6",
           "trainer": "游達榮",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K426.gif"
