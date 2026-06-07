@@ -1,7 +1,7 @@
 {
   "date": "2026/06/07",
   "venue": "ST",
-  "scraped_at": "2026-06-06T22:28:14.247767Z",
+  "scraped_at": "2026-06-07T22:28:01.398853Z",
   "races": [
     {
       "race_no": "1",
@@ -781,11 +781,11 @@
         },
         {
           "horse_no": "2",
-          "horse_name": "忠良烈漢",
-          "weight": "130",
-          "jockey": "奧爾民",
-          "gate": "12",
-          "trainer": "徐雨石",
+          "horse_name": "忠良烈漢(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L360.gif"
         },
         {
