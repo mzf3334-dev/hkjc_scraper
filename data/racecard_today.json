@@ -1,7 +1,7 @@
 {
   "date": "2026/06/10",
   "venue": "HV",
-  "scraped_at": "2026-06-08T22:36:12.326996Z",
+  "scraped_at": "2026-06-09T22:37:01.547356Z",
   "races": [
     {
       "race_no": "1",
@@ -197,11 +197,11 @@
         },
         {
           "horse_no": "9",
-          "horse_name": "耀昌勝世",
-          "weight": "117",
-          "jockey": "黃寶妮 (-7)",
-          "gate": "12",
-          "trainer": "葉楚航",
+          "horse_name": "耀昌勝世(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J529.gif"
         },
         {
@@ -763,12 +763,12 @@
         },
         {
           "horse_no": "8",
-          "horse_name": "祥勝將軍",
-          "weight": "121",
-          "jockey": "潘頓",
+          "horse_name": "勁好運",
+          "weight": "118",
+          "jockey": "蔡明紹",
           "gate": "2",
           "trainer": "廖康銘",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J509.gif"
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H481.gif"
         },
         {
           "horse_no": "9",
@@ -966,12 +966,12 @@
         },
         {
           "horse_no": "5",
-          "horse_name": "川河動駒",
+          "horse_name": "大愛無疆",
           "weight": "127",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "奧爾民",
           "gate": "8",
-          "trainer": "游達榮",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H456.gif"
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K235.gif"
         },
         {
           "horse_no": "6",
