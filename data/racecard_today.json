@@ -1,7 +1,7 @@
 {
   "date": "2026/06/10",
   "venue": "HV",
-  "scraped_at": "2026-06-09T22:37:01.547356Z",
+  "scraped_at": "2026-06-10T22:41:16.696675Z",
   "races": [
     {
       "race_no": "1",
@@ -152,11 +152,11 @@
         },
         {
           "horse_no": "4",
-          "horse_name": "凱皇寶",
-          "weight": "130",
-          "jockey": "梁家俊",
-          "gate": "4",
-          "trainer": "巫偉傑",
+          "horse_name": "凱皇寶(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K396.gif"
         },
         {
