@@ -1,7 +1,7 @@
 {
   "date": "2026/06/13",
   "venue": "ST",
-  "scraped_at": "2026-06-11T22:39:49.841504Z",
+  "scraped_at": "2026-06-12T22:36:44.244293Z",
   "races": [
     {
       "race_no": "1",
@@ -896,11 +896,11 @@
         },
         {
           "horse_no": "9",
-          "horse_name": "至尊高超",
-          "weight": "119",
-          "jockey": "田泰安",
-          "gate": "10",
-          "trainer": "蔡約翰",
+          "horse_name": "至尊高超(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J443.gif"
         },
         {
