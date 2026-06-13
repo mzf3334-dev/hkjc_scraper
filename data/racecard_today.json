@@ -1,7 +1,7 @@
 {
   "date": "2026/06/13",
   "venue": "ST",
-  "scraped_at": "2026-06-12T22:36:44.244293Z",
+  "scraped_at": "2026-06-13T22:37:37.426876Z",
   "races": [
     {
       "race_no": "1",
@@ -116,11 +116,11 @@
         },
         {
           "horse_no": "5",
-          "horse_name": "萬里雲",
-          "weight": "129",
-          "jockey": "布文",
-          "gate": "12",
-          "trainer": "賀賢",
+          "horse_name": "萬里雲(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K279.gif"
         },
         {
@@ -774,7 +774,7 @@
           "horse_no": "8",
           "horse_name": "精益飛駒",
           "weight": "128",
-          "jockey": "班德禮",
+          "jockey": "布浩榮",
           "gate": "3",
           "trainer": "葉楚航",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L386.gif"
@@ -1036,11 +1036,11 @@
       "entries": [
         {
           "horse_no": "1",
-          "horse_name": "遙遙領先",
-          "weight": "135",
-          "jockey": "袁幸堯 (-10)",
-          "gate": "1",
-          "trainer": "呂健威",
+          "horse_name": "遙遙領先(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J263.gif"
         },
         {
@@ -1119,7 +1119,7 @@
           "horse_no": "10",
           "horse_name": "三寶進財",
           "weight": "119",
-          "jockey": "班德禮",
+          "jockey": "金誠剛",
           "gate": "10",
           "trainer": "游達榮",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L167.gif"
