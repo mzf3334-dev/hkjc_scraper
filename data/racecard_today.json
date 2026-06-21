@@ -1,7 +1,7 @@
 {
   "date": "2026/06/21",
   "venue": "ST",
-  "scraped_at": "2026-06-20T22:31:14.174221Z",
+  "scraped_at": "2026-06-21T22:31:22.311884Z",
   "races": [
     {
       "race_no": "1",
@@ -765,11 +765,11 @@
         },
         {
           "horse_no": "11",
-          "horse_name": "明亮天下",
-          "weight": "123",
-          "jockey": "潘明輝",
-          "gate": "13",
-          "trainer": "羅富全",
+          "horse_name": "明亮天下(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J170.gif"
         },
         {
@@ -864,7 +864,7 @@
           "horse_no": "7",
           "horse_name": "幸運有您",
           "weight": "119",
-          "jockey": "霍宏聲",
+          "jockey": "周俊樂",
           "gate": "8",
           "trainer": "羅富全",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/E356.gif"
@@ -1236,7 +1236,7 @@
           "horse_no": "11",
           "horse_name": "開心三寶",
           "weight": "120",
-          "jockey": "霍宏聲",
+          "jockey": "希威森",
           "gate": "13",
           "trainer": "呂健威",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K511.gif"
