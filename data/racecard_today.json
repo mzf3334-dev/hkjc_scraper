@@ -1,7 +1,7 @@
 {
   "date": "2026/06/24",
   "venue": "HV",
-  "scraped_at": "2026-06-22T22:38:19.889051Z",
+  "scraped_at": "2026-06-23T22:32:18.995726Z",
   "races": [
     {
       "race_no": "1",
@@ -914,12 +914,12 @@
         },
         {
           "horse_no": "12",
-          "horse_name": "時尚風趣",
-          "weight": "120",
-          "jockey": "巴度",
+          "horse_name": "嘉應勇將",
+          "weight": "130",
+          "jockey": "鍾易禮 (-2)",
           "gate": "10",
-          "trainer": "鄭俊偉",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J164.gif"
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L094.gif"
         }
       ]
     },
