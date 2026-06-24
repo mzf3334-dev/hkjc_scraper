@@ -1,7 +1,7 @@
 {
   "date": "2026/06/24",
   "venue": "HV",
-  "scraped_at": "2026-06-23T22:32:18.995726Z",
+  "scraped_at": "2026-06-24T22:32:46.277424Z",
   "races": [
     {
       "race_no": "1",
@@ -1029,11 +1029,11 @@
         },
         {
           "horse_no": "12",
-          "horse_name": "大文豪",
-          "weight": "120",
-          "jockey": "黃智弘 (-3)",
-          "gate": "7",
-          "trainer": "姚本輝",
+          "horse_name": "大文豪(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L134.gif"
         }
       ]
