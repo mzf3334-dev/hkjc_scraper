@@ -1,7 +1,7 @@
 {
   "date": "2026/07/01",
   "venue": "ST",
-  "scraped_at": "2026-06-29T22:28:04.988208Z",
+  "scraped_at": "2026-06-30T22:31:36.447635Z",
   "races": [
     {
       "race_no": "1",
@@ -260,12 +260,12 @@
         },
         {
           "horse_no": "14",
-          "horse_name": "東方福寶",
-          "weight": "116",
-          "jockey": "潘明輝",
+          "horse_name": "十力",
+          "weight": "126",
+          "jockey": "希威森",
           "gate": "1",
-          "trainer": "姚本輝",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K115.gif"
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K200.gif"
         }
       ]
     },
