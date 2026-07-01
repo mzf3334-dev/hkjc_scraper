@@ -1,7 +1,7 @@
 {
   "date": "2026/07/01",
   "venue": "ST",
-  "scraped_at": "2026-06-30T22:31:36.447635Z",
+  "scraped_at": "2026-07-01T22:34:00.849518Z",
   "races": [
     {
       "race_no": "1",
@@ -481,11 +481,11 @@
         },
         {
           "horse_no": "9",
-          "horse_name": "盈俊天下",
-          "weight": "125",
-          "jockey": "田泰安",
-          "gate": "10",
-          "trainer": "桂福特",
+          "horse_name": "盈俊天下(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L346.gif"
         },
         {
