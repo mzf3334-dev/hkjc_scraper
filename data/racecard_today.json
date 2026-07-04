@@ -1,7 +1,7 @@
 {
   "date": "2026/07/04",
   "venue": "ST",
-  "scraped_at": "2026-07-03T22:25:32.787340Z",
+  "scraped_at": "2026-07-04T22:31:30.984505Z",
   "races": [
     {
       "race_no": "1",
@@ -673,11 +673,11 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "百威多贏",
-          "weight": "131",
-          "jockey": "霍宏聲",
-          "gate": "4",
-          "trainer": "徐雨石",
+          "horse_name": "百威多贏(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K261.gif"
         },
         {
