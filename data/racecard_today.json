@@ -1,7 +1,7 @@
 {
   "date": "2026/07/08",
   "venue": "HV",
-  "scraped_at": "2026-07-06T22:30:55.870611Z",
+  "scraped_at": "2026-07-07T22:27:38.680691Z",
   "races": [
     {
       "race_no": "1",
@@ -13,7 +13,7 @@
           "horse_name": "鄉村樂韻",
           "weight": "135",
           "jockey": "艾兆禮",
-          "gate": "10",
+          "gate": "9",
           "trainer": "蔡約翰",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H436.gif"
         },
@@ -22,7 +22,7 @@
           "horse_name": "喆喆友福",
           "weight": "134",
           "jockey": "布文",
-          "gate": "9",
+          "gate": "8",
           "trainer": "沈集成",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J345.gif"
         },
@@ -37,11 +37,11 @@
         },
         {
           "horse_no": "4",
-          "horse_name": "運籌帷幄",
-          "weight": "132",
-          "jockey": "希威森",
-          "gate": "5",
-          "trainer": "桂福特",
+          "horse_name": "運籌帷幄(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K090.gif"
         },
         {
@@ -49,7 +49,7 @@
           "horse_name": "洛河",
           "weight": "132",
           "jockey": "霍宏聲",
-          "gate": "8",
+          "gate": "7",
           "trainer": "丁冠豪",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J308.gif"
         },
@@ -58,7 +58,7 @@
           "horse_name": "飛雲",
           "weight": "131",
           "jockey": "莫雷拉",
-          "gate": "11",
+          "gate": "10",
           "trainer": "方嘉柏",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H320.gif"
         },
@@ -85,7 +85,7 @@
           "horse_name": "飛越晨曦",
           "weight": "129",
           "jockey": "梁家俊",
-          "gate": "12",
+          "gate": "11",
           "trainer": "伍鵬志",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K483.gif"
         },
@@ -94,7 +94,7 @@
           "horse_name": "辣得金",
           "weight": "129",
           "jockey": "何澤堯",
-          "gate": "7",
+          "gate": "6",
           "trainer": "巫偉傑",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J087.gif"
         },
@@ -103,7 +103,7 @@
           "horse_name": "八里旺",
           "weight": "128",
           "jockey": "周俊樂 (-2)",
-          "gate": "6",
+          "gate": "5",
           "trainer": "鄭俊偉",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J243.gif"
         },
@@ -824,12 +824,12 @@
         },
         {
           "horse_no": "6",
-          "horse_name": "凌登",
-          "weight": "127",
+          "horse_name": "浪漫戰神",
+          "weight": "134",
           "jockey": "周俊樂 (-2)",
           "gate": "6",
           "trainer": "沈集成",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L151.gif"
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K012.gif"
         },
         {
           "horse_no": "7",
