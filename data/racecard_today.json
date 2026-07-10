@@ -1,7 +1,7 @@
 {
   "date": "2026/07/12",
   "venue": "ST",
-  "scraped_at": "2026-07-09T22:39:00.364866Z",
+  "scraped_at": "2026-07-10T23:04:49.639731Z",
   "races": [
     {
       "race_no": "1",
@@ -46,12 +46,12 @@
         },
         {
           "horse_no": "5",
-          "horse_name": "平海之星",
-          "weight": "130",
-          "jockey": "布浩榮",
+          "horse_name": "始終如一",
+          "weight": "126",
+          "jockey": "袁幸堯 (-10)",
           "gate": "6",
-          "trainer": "蔡約翰",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H344.gif"
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J392.gif"
         },
         {
           "horse_no": "6",
