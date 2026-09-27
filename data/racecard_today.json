@@ -1,7 +1,7 @@
 {
   "date": "2026/09/27",
   "venue": "ST",
-  "scraped_at": "2026-09-26T00:30:45.187575Z",
+  "scraped_at": "2026-09-27T00:21:29.749637Z",
   "races": [
     {
       "race_no": "1",
@@ -596,12 +596,12 @@
         },
         {
           "horse_no": "11",
-          "horse_name": "瑤瑤日上",
-          "weight": "120",
-          "jockey": "田泰安",
+          "horse_name": "騰雲絕影",
+          "weight": "127",
+          "jockey": "奧爾民",
           "gate": "12",
-          "trainer": "甘敏斯",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J423.gif"
+          "trainer": "賀賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L401.gif"
         },
         {
           "horse_no": "12",
@@ -844,12 +844,12 @@
         },
         {
           "horse_no": "11",
-          "horse_name": "馬錢子",
-          "weight": "119",
-          "jockey": "蔡明紹",
+          "horse_name": "駿毅快車",
+          "weight": "120",
+          "jockey": "希威森",
           "gate": "7",
-          "trainer": "徐雨石",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L053.gif"
+          "trainer": "姚本輝",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L397.gif"
         },
         {
           "horse_no": "12",
@@ -1056,12 +1056,12 @@
         },
         {
           "horse_no": "12",
-          "horse_name": "金勝名駒",
-          "weight": "123",
-          "jockey": "周俊樂 (-2)",
+          "horse_name": "遨遊飛翔",
+          "weight": "122",
+          "jockey": "潘明輝",
           "gate": "14",
-          "trainer": "蘇偉賢",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H461.gif"
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L398.gif"
         },
         {
           "horse_no": "13",
