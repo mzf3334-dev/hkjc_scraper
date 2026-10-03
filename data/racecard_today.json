@@ -1,7 +1,7 @@
 {
   "date": "2026/10/04",
   "venue": "ST",
-  "scraped_at": "2026-10-02T01:30:14.214842Z",
+  "scraped_at": "2026-10-03T01:04:38.211347Z",
   "races": [
     {
       "race_no": "1",
@@ -152,12 +152,12 @@
         },
         {
           "horse_no": "2",
-          "horse_name": "御登",
-          "weight": "134",
-          "jockey": "黃寶妮 (-7)",
+          "horse_name": "狼來了",
+          "weight": "133",
+          "jockey": "希威森",
           "gate": "6",
-          "trainer": "告東尼",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L077.gif"
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K353.gif"
         },
         {
           "horse_no": "3",
