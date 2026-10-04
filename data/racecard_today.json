@@ -1,7 +1,7 @@
 {
   "date": "2026/10/04",
   "venue": "ST",
-  "scraped_at": "2026-10-03T01:04:38.211347Z",
+  "scraped_at": "2026-10-04T00:24:27.214858Z",
   "races": [
     {
       "race_no": "1",
@@ -409,12 +409,12 @@
         },
         {
           "horse_no": "7",
-          "horse_name": "劍無情",
-          "weight": "130",
-          "jockey": "艾兆禮",
+          "horse_name": "海洋帝君",
+          "weight": "120",
+          "jockey": "田泰安",
           "gate": "6",
-          "trainer": "告東尼",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J535.gif"
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K230.gif"
         },
         {
           "horse_no": "8",
@@ -996,17 +996,17 @@
           "horse_name": "相映紅",
           "weight": "134",
           "jockey": "霍宏聲",
-          "gate": "12",
+          "gate": "11",
           "trainer": "方嘉柏",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J426.gif"
         },
         {
           "horse_no": "3",
-          "horse_name": "堅有利",
-          "weight": "128",
-          "jockey": "潘明輝",
-          "gate": "10",
-          "trainer": "沈集成",
+          "horse_name": "堅有利(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/G462.gif"
         },
         {
@@ -1050,7 +1050,7 @@
           "horse_name": "花開",
           "weight": "121",
           "jockey": "艾兆禮",
-          "gate": "11",
+          "gate": "10",
           "trainer": "文家良",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L037.gif"
         },
@@ -1304,12 +1304,12 @@
         },
         {
           "horse_no": "9",
-          "horse_name": "三甲之星",
-          "weight": "123",
-          "jockey": "田泰安",
+          "horse_name": "閃電小子",
+          "weight": "126",
+          "jockey": "梁家俊",
           "gate": "11",
-          "trainer": "桂福特",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L122.gif"
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L126.gif"
         },
         {
           "horse_no": "10",
