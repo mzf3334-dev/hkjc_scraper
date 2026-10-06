@@ -1,6 +1,1042 @@
 {
-  "date": null,
-  "venue": null,
-  "scraped_at": "2026-10-05T00:41:49.986726Z",
-  "races": []
+  "date": "2026/10/07",
+  "venue": "HV",
+  "scraped_at": "2026-10-06T02:07:57.487981Z",
+  "races": [
+    {
+      "race_no": "1",
+      "distance": "1800米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "獎星",
+          "weight": "135",
+          "jockey": "潘頓",
+          "gate": "2",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H087.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "一支箭",
+          "weight": "134",
+          "jockey": "田泰安",
+          "gate": "3",
+          "trainer": "賀賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H276.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "鴻圖大展",
+          "weight": "133",
+          "jockey": "金誠剛",
+          "gate": "1",
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L138.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "竣誠駒",
+          "weight": "133",
+          "jockey": "楊明綸",
+          "gate": "9",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H486.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "蜜蜜送",
+          "weight": "133",
+          "jockey": "霍宏聲",
+          "gate": "11",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J502.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "競駿勇士",
+          "weight": "133",
+          "jockey": "黃智弘 (-3)",
+          "gate": "8",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K464.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "一風雲",
+          "weight": "132",
+          "jockey": "潘明輝",
+          "gate": "5",
+          "trainer": "丁冠豪",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K336.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "寶成智星",
+          "weight": "130",
+          "jockey": "梁家俊",
+          "gate": "10",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J135.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "連連好運",
+          "weight": "127",
+          "jockey": "艾道拿",
+          "gate": "7",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K500.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "揚威四海",
+          "weight": "127",
+          "jockey": "奧爾民",
+          "gate": "4",
+          "trainer": "葉楚航",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K120.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "幸運同行",
+          "weight": "116",
+          "jockey": "艾兆禮",
+          "gate": "12",
+          "trainer": "蔡約翰",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J331.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "戰騎飛",
+          "weight": "115",
+          "jockey": "巫顯東 (-2)",
+          "gate": "6",
+          "trainer": "丁冠豪",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J294.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "2",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "本領多好",
+          "weight": "135",
+          "jockey": "希威森",
+          "gate": "8",
+          "trainer": "桂福特",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L315.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "幸運愉快",
+          "weight": "134",
+          "jockey": "潘明輝",
+          "gate": "10",
+          "trainer": "巫偉傑",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K064.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "銳喜",
+          "weight": "132",
+          "jockey": "黃智弘 (-3)",
+          "gate": "2",
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L284.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "紅錢到",
+          "weight": "131",
+          "jockey": "霍宏聲",
+          "gate": "12",
+          "trainer": "呂健威",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J116.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "環球英雄",
+          "weight": "130",
+          "jockey": "班德禮",
+          "gate": "3",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J413.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "千杯敬典",
+          "weight": "129",
+          "jockey": "袁幸堯 (-7)",
+          "gate": "4",
+          "trainer": "姚本輝",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H321.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "新力",
+          "weight": "126",
+          "jockey": "楊明綸",
+          "gate": "5",
+          "trainer": "鄭俊偉",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H325.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "勝利君子",
+          "weight": "122",
+          "jockey": "何澤堯",
+          "gate": "6",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L061.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "駿馬之光",
+          "weight": "119",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "9",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K159.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "天下寵兒",
+          "weight": "119",
+          "jockey": "艾兆禮",
+          "gate": "1",
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J359.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "威威神駒",
+          "weight": "118",
+          "jockey": "田泰安",
+          "gate": "11",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K565.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "智勝攻略",
+          "weight": "116",
+          "jockey": "巴度",
+          "gate": "7",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H197.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "3",
+      "distance": "1650米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "星願無限",
+          "weight": "135",
+          "jockey": "希威森",
+          "gate": "12",
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L267.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "佳登",
+          "weight": "135",
+          "jockey": "艾道拿",
+          "gate": "6",
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K162.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "大文豪",
+          "weight": "131",
+          "jockey": "奧爾民",
+          "gate": "1",
+          "trainer": "姚本輝",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L134.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "卓越蒨鋒",
+          "weight": "131",
+          "jockey": "潘頓",
+          "gate": "9",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J231.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "牛精新星",
+          "weight": "127",
+          "jockey": "蔡明紹",
+          "gate": "10",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L200.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "有情有義",
+          "weight": "126",
+          "jockey": "霍宏聲",
+          "gate": "2",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K416.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "滿洛城",
+          "weight": "123",
+          "jockey": "班德禮",
+          "gate": "8",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K374.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "金駒永騰",
+          "weight": "123",
+          "jockey": "黃智弘 (-3)",
+          "gate": "11",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J398.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "顏色的顏",
+          "weight": "121",
+          "jockey": "金誠剛",
+          "gate": "3",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L054.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "康昌之星",
+          "weight": "120",
+          "jockey": "艾兆禮",
+          "gate": "7",
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K003.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "平天雄",
+          "weight": "120",
+          "jockey": "楊明綸",
+          "gate": "4",
+          "trainer": "丁冠豪",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K407.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "保羅輝煌",
+          "weight": "118",
+          "jockey": "潘明輝",
+          "gate": "5",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K524.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "4",
+      "distance": "1650米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "爆笑",
+          "weight": "135",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "12",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J079.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "深心星",
+          "weight": "132",
+          "jockey": "黃智弘 (-3)",
+          "gate": "1",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K041.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "紅海勁",
+          "weight": "130",
+          "jockey": "霍宏聲",
+          "gate": "8",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H207.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "先到先得",
+          "weight": "129",
+          "jockey": "艾道拿",
+          "gate": "5",
+          "trainer": "蔡約翰",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J098.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "晉步贏",
+          "weight": "128",
+          "jockey": "何澤堯",
+          "gate": "11",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L269.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "火流星",
+          "weight": "127",
+          "jockey": "潘明輝",
+          "gate": "7",
+          "trainer": "葉楚航",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L426.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "妙算強人",
+          "weight": "127",
+          "jockey": "巫顯東 (-2)",
+          "gate": "9",
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K577.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "超開心",
+          "weight": "126",
+          "jockey": "潘頓",
+          "gate": "10",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K260.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "奮鬥輝煌",
+          "weight": "121",
+          "jockey": "金誠剛",
+          "gate": "6",
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J236.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "準希望",
+          "weight": "120",
+          "jockey": "巴度",
+          "gate": "2",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L047.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "焦點",
+          "weight": "118",
+          "jockey": "艾兆禮",
+          "gate": "3",
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H173.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "瑞祺威楓",
+          "weight": "118",
+          "jockey": "田泰安",
+          "gate": "4",
+          "trainer": "姚本輝",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K009.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "5",
+      "distance": "1000米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "鴻圖新星",
+          "weight": "135",
+          "jockey": "金誠剛",
+          "gate": "1",
+          "trainer": "蔡約翰",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J323.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "長勝金剛",
+          "weight": "133",
+          "jockey": "袁幸堯 (-7)",
+          "gate": "10",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K266.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "友駿同心",
+          "weight": "131",
+          "jockey": "梁家俊",
+          "gate": "8",
+          "trainer": "蘇偉賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L214.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "巴閉王",
+          "weight": "131",
+          "jockey": "潘頓",
+          "gate": "4",
+          "trainer": "呂健威",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K479.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "銳目",
+          "weight": "131",
+          "jockey": "班德禮",
+          "gate": "2",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L068.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "美麗登場",
+          "weight": "130",
+          "jockey": "艾兆禮",
+          "gate": "11",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L260.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "哥得寶",
+          "weight": "128",
+          "jockey": "奧爾民",
+          "gate": "6",
+          "trainer": "賀賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L368.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "佐治傳奇",
+          "weight": "128",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "7",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L007.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "赤兔再世",
+          "weight": "128",
+          "jockey": "艾道拿",
+          "gate": "9",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L461.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "鋼鐵安防",
+          "weight": "124",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "3",
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L174.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "杰遜仔",
+          "weight": "122",
+          "jockey": "巴度",
+          "gate": "5",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L036.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "馬運高",
+          "weight": "118",
+          "jockey": "田泰安",
+          "gate": "12",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L175.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "6",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "添開心",
+          "weight": "135",
+          "jockey": "艾兆禮",
+          "gate": "11",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H203.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "龍虎精神",
+          "weight": "132",
+          "jockey": "何澤堯",
+          "gate": "7",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L116.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "星威心得",
+          "weight": "128",
+          "jockey": "金誠剛",
+          "gate": "8",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L074.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "銳不可當",
+          "weight": "128",
+          "jockey": "梁家俊",
+          "gate": "12",
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L205.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "加州勇勝",
+          "weight": "125",
+          "jockey": "田泰安",
+          "gate": "2",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K364.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "勝多多",
+          "weight": "123",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "9",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H407.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "文采風流",
+          "weight": "123",
+          "jockey": "奧爾民",
+          "gate": "4",
+          "trainer": "蘇偉賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L021.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "萬眾開心",
+          "weight": "120",
+          "jockey": "蔡明紹",
+          "gate": "5",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H208.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "後無來者",
+          "weight": "120",
+          "jockey": "巴度",
+          "gate": "1",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K049.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "頑童",
+          "weight": "119",
+          "jockey": "楊明綸",
+          "gate": "6",
+          "trainer": "鄭俊偉",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L144.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "觀萬象",
+          "weight": "119",
+          "jockey": "潘明輝",
+          "gate": "3",
+          "trainer": "葉楚航",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L060.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "首駿",
+          "weight": "117",
+          "jockey": "班德禮",
+          "gate": "10",
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K189.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "7",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "晨曦儷人",
+          "weight": "135",
+          "jockey": "楊明綸",
+          "gate": "9",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J066.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "東來欣賞",
+          "weight": "130",
+          "jockey": "袁幸堯 (-7)",
+          "gate": "5",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J290.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "快活英雄",
+          "weight": "129",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "4",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J346.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "幸運星球",
+          "weight": "129",
+          "jockey": "潘明輝",
+          "gate": "3",
+          "trainer": "丁冠豪",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H235.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "觀眾之力",
+          "weight": "128",
+          "jockey": "巴度",
+          "gate": "7",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K107.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "電源之駒",
+          "weight": "123",
+          "jockey": "霍宏聲",
+          "gate": "11",
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/E301.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "耀寶",
+          "weight": "121",
+          "jockey": "艾兆禮",
+          "gate": "10",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J437.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "關鍵所在",
+          "weight": "120",
+          "jockey": "黃智弘 (-3)",
+          "gate": "12",
+          "trainer": "沈集成",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K154.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "朗日自強",
+          "weight": "119",
+          "jockey": "梁家俊",
+          "gate": "1",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J530.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "天馬行雲",
+          "weight": "118",
+          "jockey": "希威森",
+          "gate": "2",
+          "trainer": "桂福特",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L221.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "丞匡掠影",
+          "weight": "117",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "6",
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L168.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "競駿非凡",
+          "weight": "117",
+          "jockey": "蔡明紹",
+          "gate": "8",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J401.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "8",
+      "distance": "1650米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "一定超",
+          "weight": "135",
+          "jockey": "潘頓",
+          "gate": "7",
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K298.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "幸運派彩",
+          "weight": "132",
+          "jockey": "巴度",
+          "gate": "2",
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K313.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "盈好威楓",
+          "weight": "128",
+          "jockey": "金誠剛",
+          "gate": "6",
+          "trainer": "姚本輝",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K131.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "嘉應勇將",
+          "weight": "127",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "4",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L094.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "自動自覺",
+          "weight": "123",
+          "jockey": "袁幸堯 (-7)",
+          "gate": "11",
+          "trainer": "羅富全",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K080.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "傲視同群",
+          "weight": "121",
+          "jockey": "艾兆禮",
+          "gate": "12",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K357.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "高高至高",
+          "weight": "120",
+          "jockey": "希威森",
+          "gate": "10",
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L032.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "金滙千帥",
+          "weight": "119",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "5",
+          "trainer": "賀賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J498.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "大千雄心",
+          "weight": "118",
+          "jockey": "黃智弘 (-3)",
+          "gate": "8",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K398.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "財富非凡",
+          "weight": "117",
+          "jockey": "班德禮",
+          "gate": "1",
+          "trainer": "巫偉傑",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L057.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "開心三寶",
+          "weight": "117",
+          "jockey": "蔡明紹",
+          "gate": "3",
+          "trainer": "呂健威",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K511.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "太子",
+          "weight": "116",
+          "jockey": "梁家俊",
+          "gate": "9",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K362.gif"
+        }
+      ]
+    },
+    {
+      "race_no": "9",
+      "distance": "1200米",
+      "going": "",
+      "entries": [
+        {
+          "horse_no": "1",
+          "horse_name": "志滿同行",
+          "weight": "135",
+          "jockey": "潘頓",
+          "gate": "7",
+          "trainer": "文家良",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K056.gif"
+        },
+        {
+          "horse_no": "2",
+          "horse_name": "馬達",
+          "weight": "133",
+          "jockey": "梁家俊",
+          "gate": "11",
+          "trainer": "巫偉傑",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K165.gif"
+        },
+        {
+          "horse_no": "3",
+          "horse_name": "得道猴王",
+          "weight": "131",
+          "jockey": "鍾易禮 (-2)",
+          "gate": "12",
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J303.gif"
+        },
+        {
+          "horse_no": "4",
+          "horse_name": "福星小子",
+          "weight": "127",
+          "jockey": "巴度",
+          "gate": "10",
+          "trainer": "蔡約翰",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K434.gif"
+        },
+        {
+          "horse_no": "5",
+          "horse_name": "傑出雷霆",
+          "weight": "127",
+          "jockey": "希威森",
+          "gate": "8",
+          "trainer": "呂健威",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L121.gif"
+        },
+        {
+          "horse_no": "6",
+          "horse_name": "盈妍威楓",
+          "weight": "126",
+          "jockey": "袁幸堯 (-7)",
+          "gate": "3",
+          "trainer": "伍鵬志",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J300.gif"
+        },
+        {
+          "horse_no": "7",
+          "horse_name": "星運少爵",
+          "weight": "125",
+          "jockey": "何澤堯",
+          "gate": "1",
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H459.gif"
+        },
+        {
+          "horse_no": "8",
+          "horse_name": "可靠大師",
+          "weight": "121",
+          "jockey": "潘明輝",
+          "gate": "2",
+          "trainer": "大衛希斯",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K283.gif"
+        },
+        {
+          "horse_no": "9",
+          "horse_name": "烈焰光芒",
+          "weight": "121",
+          "jockey": "艾兆禮",
+          "gate": "9",
+          "trainer": "韋達",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L142.gif"
+        },
+        {
+          "horse_no": "10",
+          "horse_name": "發發發",
+          "weight": "121",
+          "jockey": "金誠剛",
+          "gate": "5",
+          "trainer": "桂福特",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L302.gif"
+        },
+        {
+          "horse_no": "11",
+          "horse_name": "勇霸龍",
+          "weight": "120",
+          "jockey": "黃寶妮 (-7)",
+          "gate": "4",
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J237.gif"
+        },
+        {
+          "horse_no": "12",
+          "horse_name": "勁駿騰飛",
+          "weight": "118",
+          "jockey": "楊明綸",
+          "gate": "6",
+          "trainer": "蘇偉賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L314.gif"
+        }
+      ]
+    }
+  ]
 }
