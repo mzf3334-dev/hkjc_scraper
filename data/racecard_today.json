@@ -1,7 +1,7 @@
 {
   "date": "2026/10/11",
   "venue": "ST",
-  "scraped_at": "2026-10-08T01:43:36.073987Z",
+  "scraped_at": "2026-10-09T01:55:33.746100Z",
   "races": [
     {
       "race_no": "1",
@@ -376,7 +376,7 @@
           "horse_name": "鑽石星空",
           "weight": "135",
           "jockey": "黃寶妮 (-7)",
-          "gate": "6",
+          "gate": "5",
           "trainer": "徐雨石",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J275.gif"
         },
@@ -391,11 +391,11 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "三軍勇將",
-          "weight": "129",
-          "jockey": "何澤堯",
-          "gate": "4",
-          "trainer": "方嘉柏",
+          "horse_name": "三軍勇將(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J360.gif"
         },
         {
@@ -403,7 +403,7 @@
           "horse_name": "富心星",
           "weight": "127",
           "jockey": "梁家俊",
-          "gate": "8",
+          "gate": "7",
           "trainer": "方嘉柏",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K125.gif"
         },
@@ -412,7 +412,7 @@
           "horse_name": "德心知遇",
           "weight": "126",
           "jockey": "田泰安",
-          "gate": "7",
+          "gate": "6",
           "trainer": "蔡約翰",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J133.gif"
         },
@@ -421,7 +421,7 @@
           "horse_name": "定風波",
           "weight": "122",
           "jockey": "黃智弘 (-3)",
-          "gate": "10",
+          "gate": "9",
           "trainer": "沈集成",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L428.gif"
         },
@@ -439,7 +439,7 @@
           "horse_name": "肯佩斯",
           "weight": "121",
           "jockey": "艾兆禮",
-          "gate": "9",
+          "gate": "8",
           "trainer": "賀賢",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J265.gif"
         },
@@ -448,7 +448,7 @@
           "horse_name": "狀元聲價",
           "weight": "121",
           "jockey": "袁幸堯 (-7)",
-          "gate": "5",
+          "gate": "4",
           "trainer": "甘敏斯",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L546.gif"
         },
