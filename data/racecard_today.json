@@ -1,7 +1,7 @@
 {
   "date": "2026/10/11",
   "venue": "ST",
-  "scraped_at": "2026-10-09T01:55:33.746100Z",
+  "scraped_at": "2026-10-10T01:39:16.725087Z",
   "races": [
     {
       "race_no": "1",
@@ -303,12 +303,12 @@
         },
         {
           "horse_no": "6",
-          "horse_name": "祥發寬瑩",
-          "weight": "127",
-          "jockey": "蔡明紹",
+          "horse_name": "風火猴王",
+          "weight": "130",
+          "jockey": "艾道拿",
           "gate": "8",
-          "trainer": "韋達",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K488.gif"
+          "trainer": "游達榮",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J511.gif"
         },
         {
           "horse_no": "7",
@@ -754,12 +754,12 @@
         },
         {
           "horse_no": "7",
-          "horse_name": "威武高升",
-          "weight": "129",
-          "jockey": "奧爾民",
+          "horse_name": "騰達勇士",
+          "weight": "119",
+          "jockey": "班德禮",
           "gate": "11",
-          "trainer": "賀賢",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L160.gif"
+          "trainer": "方嘉柏",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K376.gif"
         },
         {
           "horse_no": "8",
