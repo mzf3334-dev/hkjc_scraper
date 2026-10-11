@@ -1,7 +1,7 @@
 {
   "date": "2026/10/11",
   "venue": "ST",
-  "scraped_at": "2026-10-10T01:39:16.725087Z",
+  "scraped_at": "2026-10-11T00:44:37.707279Z",
   "races": [
     {
       "race_no": "1",
@@ -403,17 +403,17 @@
           "horse_name": "富心星",
           "weight": "127",
           "jockey": "梁家俊",
-          "gate": "7",
+          "gate": "6",
           "trainer": "方嘉柏",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K125.gif"
         },
         {
           "horse_no": "5",
-          "horse_name": "德心知遇",
-          "weight": "126",
-          "jockey": "田泰安",
-          "gate": "6",
-          "trainer": "蔡約翰",
+          "horse_name": "德心知遇(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J133.gif"
         },
         {
@@ -421,7 +421,7 @@
           "horse_name": "定風波",
           "weight": "122",
           "jockey": "黃智弘 (-3)",
-          "gate": "9",
+          "gate": "8",
           "trainer": "沈集成",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L428.gif"
         },
@@ -439,7 +439,7 @@
           "horse_name": "肯佩斯",
           "weight": "121",
           "jockey": "艾兆禮",
-          "gate": "8",
+          "gate": "7",
           "trainer": "賀賢",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J265.gif"
         },
