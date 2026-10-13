@@ -1,6 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
+from hkjc_result_parser import extract_result_rows
 import csv
 import re
 import os
@@ -159,55 +160,7 @@ async def scrape_hkjc_results(date_str):
 
                 race_soup = BeautifulSoup(await page.content(), 'html.parser')
                 
-                # 提取邏輯
-                distance = ""
-                dist_match = re.search(r'(\d+米)', race_soup.get_text())
-                if dist_match: distance = dist_match.group(1)
-
-                going = ""
-                going_label = race_soup.find(string=re.compile(r'場地狀況'))
-                if going_label:
-                    going_td = going_label.find_parent('td')
-                    if going_td:
-                        next_td = going_td.find_next_sibling('td')
-                        if next_td: going = next_td.get_text(strip=True)
-
-                incidents = {}
-                incident_table = None
-                for t in race_soup.find_all('table'):
-                    if '競賽事件' in t.get_text():
-                        incident_table = t
-                        break
-                if incident_table:
-                    for row in incident_table.select('tr')[1:]:
-                        cols = row.select('td')
-                        if len(cols) >= 4:
-                            horse = cols[2].get_text(strip=True).split('(')[0].strip()
-                            incidents[horse] = cols[3].get_text(strip=True)
-
-                result_table = race_soup.find('table', class_=re.compile(r'draggable'))
-                if result_table:
-                    for row in result_table.select('tr')[1:]:
-                        cols = row.select('td')
-                        if len(cols) >= 12:
-                            horse_full = cols[2].get_text(strip=True)
-                            horse_clean = horse_full.split('(')[0].strip()
-                            all_data.append({
-                                "日期": date_str,
-                                "場次": race_no,
-                                "路程": distance,
-                                "場地狀況": going,
-                                "名次": cols[0].get_text(strip=True),
-                                "馬號": cols[1].get_text(strip=True),
-                                "馬名": horse_full,
-                                "騎師": cols[3].get_text(strip=True),
-                                "練馬師": cols[4].get_text(strip=True),
-                                "實際負磅": cols[5].get_text(strip=True),
-                                "排位體重": cols[6].get_text(strip=True),
-                                "檔位": cols[7].get_text(strip=True),
-                                "完成時間": cols[10].get_text(strip=True),
-                                "賽後馬匹狀況": incidents.get(horse_clean, "")
-                            })
+                all_data.extend(extract_result_rows(race_soup, date_str, race_no))
             return all_data
         finally:
             await browser.close()
