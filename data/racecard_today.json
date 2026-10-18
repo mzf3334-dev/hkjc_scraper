@@ -1,7 +1,7 @@
 {
   "date": "2026/10/19",
   "venue": "ST",
-  "scraped_at": "2026-10-17T23:56:11.221702Z",
+  "scraped_at": "2026-10-18T23:59:54.856168Z",
   "races": [
     {
       "race_no": "1",
@@ -1144,12 +1144,12 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "活力拍檔",
-          "weight": "131",
+          "horse_name": "風將",
+          "weight": "122",
           "jockey": "何澤堯",
           "gate": "13",
-          "trainer": "呂健威",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K554.gif"
+          "trainer": "告東尼",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L184.gif"
         },
         {
           "horse_no": "4",
