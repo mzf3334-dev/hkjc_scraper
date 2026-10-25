@@ -1,7 +1,7 @@
 {
   "date": "2026/10/25",
   "venue": "ST",
-  "scraped_at": "2026-10-24T00:27:17.446520Z",
+  "scraped_at": "2026-10-25T00:06:02.469751Z",
   "races": [
     {
       "race_no": "1",
@@ -13,7 +13,7 @@
           "horse_name": "全能勇士",
           "weight": "132",
           "jockey": "潘頓",
-          "gate": "3",
+          "gate": "2",
           "trainer": "呂健威",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L245.gif"
         },
@@ -22,7 +22,7 @@
           "horse_name": "星球勇士",
           "weight": "132",
           "jockey": "袁幸堯 (-7)",
-          "gate": "6",
+          "gate": "5",
           "trainer": "大衛希斯",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L441.gif"
         },
@@ -31,17 +31,17 @@
           "horse_name": "魅影諜飛",
           "weight": "124",
           "jockey": "霍宏聲",
-          "gate": "8",
+          "gate": "7",
           "trainer": "姚本輝",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L444.gif"
         },
         {
           "horse_no": "4",
-          "horse_name": "星月峰雲",
-          "weight": "124",
-          "jockey": "巴度",
-          "gate": "1",
-          "trainer": "韋達",
+          "horse_name": "星月峰雲(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L455.gif"
         },
         {
@@ -49,7 +49,7 @@
           "horse_name": "綠頂峰",
           "weight": "124",
           "jockey": "奧爾民",
-          "gate": "7",
+          "gate": "6",
           "trainer": "鄭俊偉",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L250.gif"
         },
@@ -58,7 +58,7 @@
           "horse_name": "丙午傳奇",
           "weight": "124",
           "jockey": "周俊樂 (-2)",
-          "gate": "4",
+          "gate": "3",
           "trainer": "沈集成",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/M046.gif"
         },
@@ -67,7 +67,7 @@
           "horse_name": "海象先生",
           "weight": "124",
           "jockey": "梁家俊",
-          "gate": "5",
+          "gate": "4",
           "trainer": "伍鵬志",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L457.gif"
         },
@@ -76,7 +76,7 @@
           "horse_name": "星系之錶",
           "weight": "124",
           "jockey": "黃智弘 (-3)",
-          "gate": "9",
+          "gate": "8",
           "trainer": "文家良",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L509.gif"
         },
@@ -85,7 +85,7 @@
           "horse_name": "博士生",
           "weight": "124",
           "jockey": "金誠剛",
-          "gate": "10",
+          "gate": "9",
           "trainer": "韋達",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L351.gif"
         },
@@ -94,7 +94,7 @@
           "horse_name": "禪勝閃亮",
           "weight": "121",
           "jockey": "希威森",
-          "gate": "2",
+          "gate": "1",
           "trainer": "呂健威",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L051.gif"
         },
@@ -103,7 +103,7 @@
           "horse_name": "紫電王",
           "weight": "120",
           "jockey": "楊明綸",
-          "gate": "11",
+          "gate": "10",
           "trainer": "葉楚航",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L387.gif"
         }
