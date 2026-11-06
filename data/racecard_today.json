@@ -1,7 +1,7 @@
 {
   "date": "2026/11/08",
   "venue": "ST",
-  "scraped_at": "2026-11-05T02:08:42.881552Z",
+  "scraped_at": "2026-11-06T02:09:48.869464Z",
   "races": [
     {
       "race_no": "1",
@@ -1011,12 +1011,12 @@
       "entries": [
         {
           "horse_no": "1",
-          "horse_name": "喜蓮勁感",
-          "weight": "134",
-          "jockey": "周俊樂 (-2)",
+          "horse_name": "展長風",
+          "weight": "135",
+          "jockey": "霍宏聲",
           "gate": "12",
-          "trainer": "游達榮",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L028.gif"
+          "trainer": "廖康銘",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L493.gif"
         },
         {
           "horse_no": "2",
