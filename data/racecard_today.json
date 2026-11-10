@@ -1,7 +1,7 @@
 {
   "date": "2026/11/11",
   "venue": "HV",
-  "scraped_at": "2026-11-09T01:30:47.007854Z",
+  "scraped_at": "2026-11-10T04:00:16.315238Z",
   "races": [
     {
       "race_no": "1",
@@ -39,7 +39,7 @@
           "horse_no": "4",
           "horse_name": "健康小馬",
           "weight": "133",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "艾道拿",
           "gate": "7",
           "trainer": "鄭俊偉",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L046.gif"
@@ -190,7 +190,7 @@
           "horse_no": "8",
           "horse_name": "雙子美麗",
           "weight": "128",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "巴度",
           "gate": "1",
           "trainer": "告東尼",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L129.gif"
@@ -384,7 +384,7 @@
           "horse_no": "4",
           "horse_name": "開心瑰寶",
           "weight": "131",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "艾兆禮",
           "gate": "6",
           "trainer": "告東尼",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L027.gif"
@@ -481,7 +481,7 @@
           "horse_no": "2",
           "horse_name": "上浦福旺",
           "weight": "134",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "黃智弘 (-3)",
           "gate": "11",
           "trainer": "沈集成",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L102.gif"
@@ -596,7 +596,7 @@
           "horse_no": "2",
           "horse_name": "御登",
           "weight": "132",
-          "jockey": "鍾易禮 (-2)",
+          "jockey": "田泰安",
           "gate": "8",
           "trainer": "告東尼",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L077.gif"
