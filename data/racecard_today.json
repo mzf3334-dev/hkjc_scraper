@@ -1,7 +1,7 @@
 {
   "date": "2026/11/14",
   "venue": "ST",
-  "scraped_at": "2026-11-12T02:45:56.454468Z",
+  "scraped_at": "2026-11-13T02:28:42.573663Z",
   "races": [
     {
       "race_no": "1",
@@ -357,12 +357,12 @@
         },
         {
           "horse_no": "10",
-          "horse_name": "喜行",
-          "weight": "120",
+          "horse_name": "不勞而獲",
+          "weight": "118",
           "jockey": "艾兆禮",
           "gate": "9",
-          "trainer": "廖康銘",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K399.gif"
+          "trainer": "葉楚航",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K377.gif"
         },
         {
           "horse_no": "11",
