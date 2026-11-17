@@ -1,7 +1,7 @@
 {
   "date": "2026/11/18",
   "venue": "HV",
-  "scraped_at": "2026-11-16T01:39:51.758793Z",
+  "scraped_at": "2026-11-17T04:22:26.154398Z",
   "races": [
     {
       "race_no": "1",
@@ -630,12 +630,12 @@
         },
         {
           "horse_no": "6",
-          "horse_name": "贏得威楓",
-          "weight": "127",
-          "jockey": "奧爾民",
+          "horse_name": "萬眾開心",
+          "weight": "116",
+          "jockey": "奧璇璧",
           "gate": "9",
-          "trainer": "伍鵬志",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L248.gif"
+          "trainer": "黎昭昇",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H208.gif"
         },
         {
           "horse_no": "7",
