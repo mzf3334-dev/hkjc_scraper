@@ -1,7 +1,7 @@
 {
   "date": "2026/11/22",
   "venue": "ST",
-  "scraped_at": "2026-11-20T02:53:59.443045Z",
+  "scraped_at": "2026-11-21T03:02:12.866388Z",
   "races": [
     {
       "race_no": "1",
@@ -957,11 +957,11 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "港邊小區",
-          "weight": "123",
-          "jockey": "麥道朗",
-          "gate": "9",
-          "trainer": "游孝廉",
+          "horse_name": "港邊小區(退出)",
+          "weight": "-",
+          "jockey": "-",
+          "gate": "-",
+          "trainer": "-",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K902.gif"
         },
         {
@@ -969,7 +969,7 @@
           "horse_name": "安騁",
           "weight": "123",
           "jockey": "麥文堅",
-          "gate": "10",
+          "gate": "9",
           "trainer": "蔡約翰",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/H452.gif"
         },
