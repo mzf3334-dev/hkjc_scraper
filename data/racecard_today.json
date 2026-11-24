@@ -1,7 +1,7 @@
 {
   "date": "2026/11/25",
   "venue": "HV",
-  "scraped_at": "2026-11-23T02:23:33.201662Z",
+  "scraped_at": "2026-11-24T05:47:12.707822Z",
   "races": [
     {
       "race_no": "1",
@@ -905,12 +905,12 @@
         },
         {
           "horse_no": "11",
-          "horse_name": "卓越蒨鋒",
-          "weight": "121",
-          "jockey": "巴度",
+          "horse_name": "天時威威",
+          "weight": "127",
+          "jockey": "奧爾民",
           "gate": "9",
-          "trainer": "黎昭昇",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/J231.gif"
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/M021.gif"
         },
         {
           "horse_no": "12",
