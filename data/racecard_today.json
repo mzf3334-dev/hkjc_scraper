@@ -1,7 +1,7 @@
 {
   "date": "2026/11/29",
   "venue": "ST",
-  "scraped_at": "2026-11-26T04:01:23.280580Z",
+  "scraped_at": "2026-11-27T04:04:17.374991Z",
   "races": [
     {
       "race_no": "1",
@@ -993,12 +993,12 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "泰力",
-          "weight": "130",
-          "jockey": "艾道拿",
+          "horse_name": "榮駿大道",
+          "weight": "133",
+          "jockey": "何澤堯",
           "gate": "13",
-          "trainer": "賀賢",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L171.gif"
+          "trainer": "葉楚航",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/K474.gif"
         },
         {
           "horse_no": "4",
@@ -1259,12 +1259,12 @@
         },
         {
           "horse_no": "3",
-          "horse_name": "怡昌明駒",
-          "weight": "129",
+          "horse_name": "賀長勝",
+          "weight": "122",
           "jockey": "潘頓",
           "gate": "7",
-          "trainer": "甘敏斯",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/M068.gif"
+          "trainer": "賀賢",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L529.gif"
         },
         {
           "horse_no": "4",
