@@ -1,7 +1,7 @@
 {
   "date": "2026/11/29",
   "venue": "ST",
-  "scraped_at": "2026-11-27T04:04:17.374991Z",
+  "scraped_at": "2026-11-28T03:51:20.575774Z",
   "races": [
     {
       "race_no": "1",
@@ -244,7 +244,7 @@
           "horse_no": "12",
           "horse_name": "神箭",
           "weight": "118",
-          "jockey": "奧璇璧",
+          "jockey": "希威森",
           "gate": "12",
           "trainer": "桂福特",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L254.gif"
@@ -359,7 +359,7 @@
           "horse_no": "12",
           "horse_name": "溫暖旋風",
           "weight": "126",
-          "jockey": "奧璇璧",
+          "jockey": "梁家俊",
           "gate": "9",
           "trainer": "伍鵬志",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/M006.gif"
@@ -589,7 +589,7 @@
           "horse_no": "10",
           "horse_name": "好好戀愛",
           "weight": "115",
-          "jockey": "奧璇璧",
+          "jockey": "巴度",
           "gate": "7",
           "trainer": "方嘉柏",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L052.gif"
@@ -695,7 +695,7 @@
           "horse_no": "11",
           "horse_name": "鬥志",
           "weight": "122",
-          "jockey": "奧璇璧",
+          "jockey": "艾兆禮",
           "gate": "11",
           "trainer": "蘇偉賢",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L286.gif"
@@ -961,7 +961,7 @@
           "horse_no": "12",
           "horse_name": "丞匡掠影",
           "weight": "115",
-          "jockey": "奧璇璧",
+          "jockey": "巴度",
           "gate": "1",
           "trainer": "徐雨石",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L168.gif"
@@ -1094,7 +1094,7 @@
           "horse_no": "14",
           "horse_name": "香港仔",
           "weight": "120",
-          "jockey": "奧璇璧",
+          "jockey": "潘明輝",
           "gate": "14",
           "trainer": "羅富全",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L020.gif"
@@ -1207,12 +1207,12 @@
         },
         {
           "horse_no": "12",
-          "horse_name": "發發發",
-          "weight": "121",
-          "jockey": "金誠剛",
+          "horse_name": "風耀奪標",
+          "weight": "129",
+          "jockey": "奧爾民",
           "gate": "9",
-          "trainer": "桂福特",
-          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L302.gif"
+          "trainer": "徐雨石",
+          "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/L435.gif"
         },
         {
           "horse_no": "13",
@@ -1324,7 +1324,7 @@
           "horse_no": "10",
           "horse_name": "心曠神兒",
           "weight": "121",
-          "jockey": "奧璇璧",
+          "jockey": "楊明綸",
           "gate": "4",
           "trainer": "徐雨石",
           "silk_url": "https://racing.hkjc.com/racing/content/Images/RaceColor/M028.gif"
